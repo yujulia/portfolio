@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+@import "partials/vars";
+@import "partials/fonts";
+
+// -------------------------------- resets 
+
+ol, ul {
+    @extend %nofrill;
+    list-style: none;
+}
+
+button {
+    @extend %nofrill;
+    background: none;
+    border: none;
+}
+
+:focus {
+    outline: none;
+    border-bottom: dotted 1px $color-link;
+}
+
+// --------------------------------
+
+body {
+    color: $color-text;
+    font-family: PT;
+    font-weight: $light;
+    font-size: 15px;
+}
+
+
+a {
+    text-decoration: none;
+    color: $color-link;
+}
+
+a:hover {
+    color: $color-hover;
+}
+
+a[class^="cc-"]:before {
+    margin-right: 4px;
+    font-size: 85%;
+}
+
+h1 {
+    margin: 100px 0 40px;
+    font-family: code;
+    font-weight: $light;
+    color: $color-header;
+    font-size: 50px;
+
+    a {
+        color: inherit;
+    }
+
+    span, .deemphasize {
+        display: block;
+        font-size: 20px;
+        font-family: raleway;
+    }
+}
+
+h2 {
+    font-family: raleway;
+    font-weight: $light;
+    color: $color-header;
+    font-size: 30px;
+    margin: 0;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.6em;
+}
+
+section {
+    @extend %clearfix;
+    padding: 40px 0 0 0;
+}
+
+article {
+    @extend %clearfix;
+    padding: 20px 0;
+    border-bottom: dotted 1px #ccc;
+}
+
+nav {
+    @extend %clearfix;
+
+    li {
+        display: inline-block;
+        margin-right: 20px;
+
+        a {
+            color: $color-text;
+        }
+
+        a:before {
+            font-size: 14px;
+        }
+    }    
+}
+
+footer {
+    margin-top: 100px;
+    @extend %clearfix;
+    background-color: #404040;
+    color: #ffffff;
+    padding: 40px 10px;
+}
+
+pre {
+    @include round(10px);
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.content {
+    @extend %clearfix;
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.intro {
+    @extend h2;
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.timespan {
+    @extend h1;
+    font-size: 14px;
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+.title {
+    @extend h2;
+    margin: 20px 0 0 0;
+    font-size: 16px;
+
+}
+
+.projectlist {
+    margin: 20px 0;
+
+    li {
+        @extend .nofrill;
+        display: inline-block;
+
+        img {
+            display: none;
+        }
+
+        h3 {
+            @extend .nofrill;
+            margin: 0;
+            font-size: 14px;
+            font-weight: $light;
+        }
+        h3:after {
+            content: ","
+        }
+    }
+    li:last-child h3:after {
+        content: "";
+    }
+    
+}
+
+.list {
+
+    li {
+        margin: 10px 0
+    }
+
+    li:before {
+      @extend %beforeCarrotCell;
+      content: "\e010";
+      margin-right: 10px;
+    }
+}
+
+
+
+// ------------------------------------  ipad and smaller
+@media screen and (max-width: 980px) {
+    .content {
+        width: 100%;
+    }
+}
+
+// ------------------------------------  iphone
+@media screen and (max-width: 600px)  {
+
+}

@@ -1,0 +1,28 @@
+-var addMin = (dev == true) ? "" : ".min"
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8", http-equiv="X-UA-Compatible", content="IE=edge,chrome=1") 
+        title Julia Yu
+        meta(name="description", content="a jQuery carousel plugin by Julia Yu")
+        meta(name="viewport", content="width=device-width,initial-scale=1.0")
+        link(rel="shortcut icon", href="img/favicon.ico", type="image/x-icon")
+        link(rel="icon", href="img/favicon.ico", type="image/x-icon")
+        link(rel="stylesheet", href="css/main"+ addMin +".css")
+
+    body 
+        .content
+            h1
+                |Julia Yu
+                span That's me.
+
+            nav.intro
+                ul 
+                    li: a(href="https://github.com/yujulia/", class="cc-github", target="_blank") Github
+                    li: a(href="https://goodnightdune.com", class="cc-moon", target="_blank") Goodnight Dune
+                    li: a(href="https://jcarrotcell.yujulia.com", class="cc-carrot") jCarrotCell
+                    li: a(href="work.html", class="cc-book") Past Work
+
+            section
+                p Currently I am in San Francisco doing UI design and development. 
