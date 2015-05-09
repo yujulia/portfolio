@@ -56,8 +56,11 @@ h1 {
         color: inherit;
     }
 
-    span, .deemphasize {
+    span {
         display: block;
+    }
+
+    span, .deemphasize {
         font-size: 20px;
         font-family: raleway;
     }
@@ -95,7 +98,7 @@ nav {
         margin-right: 20px;
 
         a {
-            color: $color-text;
+            color: $color-link;
         }
 
         a:before {
@@ -141,9 +144,59 @@ pre {
 
 .title {
     @extend h2;
-    margin: 20px 0 0 0;
+    margin: 0;
     font-size: 16px;
+}
 
+.imageList {
+    @extend %clearfix;
+    margin: 20px 0 20px -5px;
+
+    li {
+        @extend .nofrill;
+        display: block;
+        overflow: hidden;
+        float: left;
+        margin: 10px 5px;
+        width: 224px;
+        height: 220px;
+
+        h3 {
+            @extend h2;
+            font-weight: $light;
+            font-size: 15px;
+            line-height: 1.3em;
+            color: #000;
+        }
+        
+
+        figure {
+            @extend %nofrill;
+            display: block;
+            margin-bottom: 10px;
+            @include customShadow(3px, 3px, 10px, 0, #cccccc);
+            border: solid 1px #ccc;
+            width: 210px
+        }
+
+        .noshadow {
+            @include customShadow(0, 0, 0, 0, transparent);
+            border: none;
+        }
+
+        img {
+            height: 140px;
+            display: block;
+        }
+    }
+
+    
+
+}
+
+
+.ofNote {
+    
 }
 
 .projectlist {
@@ -197,5 +250,10 @@ pre {
 
 // ------------------------------------  iphone
 @media screen and (max-width: 600px)  {
-
+    nav {
+        li {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
 }

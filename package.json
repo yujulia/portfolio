@@ -60,6 +60,7 @@
     "lodash": "^3.8.0",
     "normalize.css": "^3.0.3",
     "velocity-animate": "^1.2.2",
+    "vinyl-ftp": "^0.4.1",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.1"
   }

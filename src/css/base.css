@@ -1,12 +1,12 @@
-ol, ul, button, section, article, nav, footer, .content {
+ol, ul, button, .imageList li figure, section, article, nav, footer, .content, .imageList {
   zoom: 1; }
-  ol:before, ul:before, button:before, section:before, article:before, nav:before, footer:before, .content:before, ol:after, ul:after, button:after, section:after, article:after, nav:after, footer:after, .content:after {
+  ol:before, ul:before, button:before, .imageList li figure:before, section:before, article:before, nav:before, footer:before, .content:before, .imageList:before, ol:after, ul:after, button:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .imageList:after {
     content: "";
     display: table; }
-  ol:after, ul:after, button:after, section:after, article:after, nav:after, footer:after, .content:after {
+  ol:after, ul:after, button:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .imageList:after {
     clear: both; }
 
-ol, ul, button {
+ol, ul, button, .imageList li figure {
   margin: 0;
   padding: 0; }
 
@@ -21,15 +21,15 @@ ol, ul, button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-ol, ul, button, section, article, nav, footer, .content {
+ol, ul, button, .imageList li figure, section, article, nav, footer, .content, .imageList {
   zoom: 1; }
-  ol:before, ul:before, button:before, section:before, article:before, nav:before, footer:before, .content:before, ol:after, ul:after, button:after, section:after, article:after, nav:after, footer:after, .content:after {
+  ol:before, ul:before, button:before, .imageList li figure:before, section:before, article:before, nav:before, footer:before, .content:before, .imageList:before, ol:after, ul:after, button:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .imageList:after {
     content: "";
     display: table; }
-  ol:after, ul:after, button:after, section:after, article:after, nav:after, footer:after, .content:after {
+  ol:after, ul:after, button:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .imageList:after {
     clear: both; }
 
-ol, ul, button {
+ol, ul, button, .imageList li figure {
   margin: 0;
   padding: 0; }
 
@@ -174,12 +174,13 @@ h1, .timespan {
   font-size: 50px; }
   h1 a, .timespan a {
     color: inherit; }
+  h1 span, .timespan span {
+    display: block; }
   h1 span, .timespan span, h1 .deemphasize, .timespan .deemphasize {
-    display: block;
     font-size: 20px;
     font-family: raleway; }
 
-h2, .intro, .title {
+h2, .intro, .title, .imageList li h3 {
   font-family: raleway;
   font-weight: 300;
   color: #999999;
@@ -201,7 +202,7 @@ nav li {
   display: inline-block;
   margin-right: 20px; }
   nav li a {
-    color: #aaaaaa; }
+    color: #029fb5; }
   nav li a:before {
     font-size: 14px; }
 
@@ -234,8 +235,39 @@ pre {
   letter-spacing: 0.1em; }
 
 .title {
-  margin: 20px 0 0 0;
+  margin: 0;
   font-size: 16px; }
+
+.imageList {
+  margin: 20px 0 20px -5px; }
+  .imageList li {
+    display: block;
+    overflow: hidden;
+    float: left;
+    margin: 10px 5px;
+    width: 224px;
+    height: 220px; }
+    .imageList li h3 {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.3em;
+      color: #000; }
+    .imageList li figure {
+      display: block;
+      margin-bottom: 10px;
+      -moz-box-shadow: 3px 3px 10px 0 #cccccc;
+      -webkit-box-shadow: 3px 3px 10px 0 #cccccc;
+      box-shadow: 3px 3px 10px 0 #cccccc;
+      border: solid 1px #ccc;
+      width: 210px; }
+    .imageList li .noshadow {
+      -moz-box-shadow: 0 0 0 0 transparent;
+      -webkit-box-shadow: 0 0 0 0 transparent;
+      box-shadow: 0 0 0 0 transparent;
+      border: none; }
+    .imageList li img {
+      height: 140px;
+      display: block; }
 
 .projectlist {
   margin: 20px 0; }
@@ -262,3 +294,7 @@ pre {
   .content {
     width: 100%; } }
 
+@media screen and (max-width: 600px) {
+  nav li {
+    display: block;
+    margin-bottom: 10px; } }

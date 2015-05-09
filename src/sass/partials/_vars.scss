@@ -60,4 +60,12 @@ $color-hover: #01383f;
     -moz-border-radius: $rad;
     border-radius: $rad;
 }
+
+@mixin customShadow($x, $y, $size, $spread, $color-shadow) {
+    -moz-box-shadow: $x $y $size $spread $color-shadow;
+    -webkit-box-shadow: $x $y $size $spread $color-shadow;
+    box-shadow: $x $y $size $spread $color-shadow;
+}
+    
+    
     
