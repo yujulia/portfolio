@@ -4,6 +4,12 @@
 @import "partials/fonts";
 
 // -------------------------------- resets 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 ol, ul {
     @extend %nofrill;
@@ -135,17 +141,11 @@ pre {
     line-height: 1.4em;
 }
 
-.timespan {
-    @extend h1;
-    font-size: 14px;
-    margin: 0;
-    letter-spacing: 0.1em;
-}
-
 .title {
     @extend h2;
     margin: 0;
     font-size: 16px;
+    color: #000;
 }
 
 .imageList {
@@ -158,25 +158,34 @@ pre {
         overflow: hidden;
         float: left;
         margin: 10px 5px;
-        width: 224px;
-        height: 220px;
+        padding-right: 10px;
+        // width: 224px;
+        // height: 220px;
 
         h3 {
             @extend h2;
             font-weight: $light;
             font-size: 15px;
             line-height: 1.3em;
-            color: #000;
+            color: #fff;
+            background: #404040;
+            margin-top: -11px;
+            width: 211px;
+            padding: 10px;
+            min-height: 60px;
+            @include customShadow(3px, 3px, 10px, 0, #cccccc);
+            margin-bottom: 10px;
         }
         
 
         figure {
             @extend %nofrill;
             display: block;
+            overflow: hidden;
             margin-bottom: 10px;
             @include customShadow(3px, 3px, 10px, 0, #cccccc);
             border: solid 1px #ccc;
-            width: 210px
+            width: 212px;
         }
 
         .noshadow {
@@ -189,57 +198,7 @@ pre {
             display: block;
         }
     }
-
-    
-
 }
-
-
-.ofNote {
-    
-}
-
-.projectlist {
-    margin: 20px 0;
-
-    li {
-        @extend .nofrill;
-        display: inline-block;
-
-        img {
-            display: none;
-        }
-
-        h3 {
-            @extend .nofrill;
-            margin: 0;
-            font-size: 14px;
-            font-weight: $light;
-        }
-        h3:after {
-            content: ","
-        }
-    }
-    li:last-child h3:after {
-        content: "";
-    }
-    
-}
-
-.list {
-
-    li {
-        margin: 10px 0
-    }
-
-    li:before {
-      @extend %beforeCarrotCell;
-      content: "\e010";
-      margin-right: 10px;
-    }
-}
-
-
 
 // ------------------------------------  ipad and smaller
 @media screen and (max-width: 980px) {

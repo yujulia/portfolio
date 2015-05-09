@@ -10,7 +10,7 @@ ol, ul, button, .imageList li figure {
   margin: 0;
   padding: 0; }
 
-[data-icon]:before, [class^="cc-"]:before, [class*=" cc-"]:before, [class^="cc-"]:after, [class*=" cc-"]:after, .list li:before {
+[data-icon]:before, [class^="cc-"]:before, [class*=" cc-"]:before, [class^="cc-"]:after, [class*=" cc-"]:after {
   font-family: "carrotcell" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -33,7 +33,7 @@ ol, ul, button, .imageList li figure {
   margin: 0;
   padding: 0; }
 
-[data-icon]:before, [class^="cc-"]:before, [class*=" cc-"]:before, [class^="cc-"]:after, [class*=" cc-"]:after, .list li:before {
+[data-icon]:before, [class^="cc-"]:before, [class*=" cc-"]:before, [class^="cc-"]:after, [class*=" cc-"]:after {
   font-family: "carrotcell" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -138,6 +138,12 @@ ol, ul, button, .imageList li figure {
 .cc-book-after:after {
   content: "\e012"; }
 
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 ol, ul {
   list-style: none; }
 
@@ -166,17 +172,17 @@ a[class^="cc-"]:before {
   margin-right: 4px;
   font-size: 85%; }
 
-h1, .timespan {
+h1 {
   margin: 100px 0 40px;
   font-family: code;
   font-weight: 300;
   color: #999999;
   font-size: 50px; }
-  h1 a, .timespan a {
+  h1 a {
     color: inherit; }
-  h1 span, .timespan span {
+  h1 span {
     display: block; }
-  h1 span, .timespan span, h1 .deemphasize, .timespan .deemphasize {
+  h1 span, h1 .deemphasize {
     font-size: 20px;
     font-family: raleway; }
 
@@ -229,14 +235,10 @@ pre {
   font-size: 20px;
   line-height: 1.4em; }
 
-.timespan {
-  font-size: 14px;
-  margin: 0;
-  letter-spacing: 0.1em; }
-
 .title {
   margin: 0;
-  font-size: 16px; }
+  font-size: 16px;
+  color: #000; }
 
 .imageList {
   margin: 20px 0 20px -5px; }
@@ -245,21 +247,30 @@ pre {
     overflow: hidden;
     float: left;
     margin: 10px 5px;
-    width: 224px;
-    height: 220px; }
+    padding-right: 10px; }
     .imageList li h3 {
       font-weight: 300;
       font-size: 15px;
       line-height: 1.3em;
-      color: #000; }
+      color: #fff;
+      background: #404040;
+      margin-top: -11px;
+      width: 211px;
+      padding: 10px;
+      min-height: 60px;
+      -moz-box-shadow: 3px 3px 10px 0 #cccccc;
+      -webkit-box-shadow: 3px 3px 10px 0 #cccccc;
+      box-shadow: 3px 3px 10px 0 #cccccc;
+      margin-bottom: 10px; }
     .imageList li figure {
       display: block;
+      overflow: hidden;
       margin-bottom: 10px;
       -moz-box-shadow: 3px 3px 10px 0 #cccccc;
       -webkit-box-shadow: 3px 3px 10px 0 #cccccc;
       box-shadow: 3px 3px 10px 0 #cccccc;
       border: solid 1px #ccc;
-      width: 210px; }
+      width: 212px; }
     .imageList li .noshadow {
       -moz-box-shadow: 0 0 0 0 transparent;
       -webkit-box-shadow: 0 0 0 0 transparent;
@@ -268,27 +279,6 @@ pre {
     .imageList li img {
       height: 140px;
       display: block; }
-
-.projectlist {
-  margin: 20px 0; }
-  .projectlist li {
-    display: inline-block; }
-    .projectlist li img {
-      display: none; }
-    .projectlist li h3 {
-      margin: 0;
-      font-size: 14px;
-      font-weight: 300; }
-    .projectlist li h3:after {
-      content: ","; }
-  .projectlist li:last-child h3:after {
-    content: ""; }
-
-.list li {
-  margin: 10px 0; }
-.list li:before {
-  content: "\e010";
-  margin-right: 10px; }
 
 @media screen and (max-width: 980px) {
   .content {
