@@ -93,7 +93,8 @@ section {
 article {
     @extend %clearfix;
     padding: 20px 0;
-    border-bottom: dotted 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    margin-bottom: 40px;
 }
 
 nav {
@@ -157,24 +158,27 @@ pre {
         display: block;
         overflow: hidden;
         float: left;
-        margin: 10px 5px;
+        margin: 0px 5px 40px;
         padding-right: 10px;
         // width: 224px;
         // height: 220px;
 
         h3 {
-            @extend h2;
+            // @extend h2;
             font-weight: $light;
             font-size: 15px;
             line-height: 1.3em;
-            color: #fff;
-            background: #404040;
+            color: #666;
+            // background: #404040;
             margin-top: -11px;
-            width: 211px;
+            width: 212px;
             padding: 10px;
             min-height: 60px;
-            @include customShadow(3px, 3px, 10px, 0, #cccccc);
+            // @include customShadow(3px, 3px, 10px, 0, #cccccc);
             margin-bottom: 10px;
+            // border-left: solid 1px #ccc;
+            // border-bottom: solid 1px #ccc;
+            // border-right: solid 1px #ccc;
         }
         
 
@@ -184,8 +188,9 @@ pre {
             overflow: hidden;
             margin-bottom: 10px;
             @include customShadow(3px, 3px, 10px, 0, #cccccc);
-            border: solid 1px #ccc;
-            width: 212px;
+            border-left: solid 1px #efefef;
+            border-top: solid 1px #efefef;
+            width: 210px;
         }
 
         .noshadow {
@@ -194,7 +199,7 @@ pre {
         }
 
         img {
-            height: 140px;
+            width: 100%;
             display: block;
         }
     }

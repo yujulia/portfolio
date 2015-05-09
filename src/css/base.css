@@ -186,7 +186,7 @@ h1 {
     font-size: 20px;
     font-family: raleway; }
 
-h2, .intro, .title, .imageList li h3 {
+h2, .intro, .title {
   font-family: raleway;
   font-weight: 300;
   color: #999999;
@@ -202,7 +202,8 @@ section {
 
 article {
   padding: 20px 0;
-  border-bottom: dotted 1px #ccc; }
+  border-bottom: solid 1px #ccc;
+  margin-bottom: 40px; }
 
 nav li {
   display: inline-block;
@@ -246,21 +247,17 @@ pre {
     display: block;
     overflow: hidden;
     float: left;
-    margin: 10px 5px;
+    margin: 0px 5px 40px;
     padding-right: 10px; }
     .imageList li h3 {
       font-weight: 300;
       font-size: 15px;
       line-height: 1.3em;
-      color: #fff;
-      background: #404040;
+      color: #666;
       margin-top: -11px;
-      width: 211px;
+      width: 212px;
       padding: 10px;
       min-height: 60px;
-      -moz-box-shadow: 3px 3px 10px 0 #cccccc;
-      -webkit-box-shadow: 3px 3px 10px 0 #cccccc;
-      box-shadow: 3px 3px 10px 0 #cccccc;
       margin-bottom: 10px; }
     .imageList li figure {
       display: block;
@@ -269,15 +266,16 @@ pre {
       -moz-box-shadow: 3px 3px 10px 0 #cccccc;
       -webkit-box-shadow: 3px 3px 10px 0 #cccccc;
       box-shadow: 3px 3px 10px 0 #cccccc;
-      border: solid 1px #ccc;
-      width: 212px; }
+      border-left: solid 1px #efefef;
+      border-top: solid 1px #efefef;
+      width: 210px; }
     .imageList li .noshadow {
       -moz-box-shadow: 0 0 0 0 transparent;
       -webkit-box-shadow: 0 0 0 0 transparent;
       box-shadow: 0 0 0 0 transparent;
       border: none; }
     .imageList li img {
-      height: 140px;
+      width: 100%;
       display: block; }
 
 @media screen and (max-width: 980px) {
