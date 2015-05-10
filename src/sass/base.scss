@@ -21,6 +21,13 @@ button {
     background: none;
     border: none;
 }
+figure {
+    @extend %nofrill;
+    img {
+        display: block;
+        width: 100%;
+    }
+}
 
 :focus {
     outline: none;
@@ -31,9 +38,12 @@ button {
 
 body {
     color: $color-text;
+    // color: #fff;
+    // background: #000;
     font-family: PT;
     font-weight: $light;
     font-size: 15px;
+    padding-bottom: 100px;
 }
 
 
@@ -43,12 +53,16 @@ a {
 }
 
 a:hover {
-    color: $color-hover;
+    opacity: 0.7;
 }
 
 a[class^="cc-"]:before {
     margin-right: 4px;
     font-size: 85%;
+}
+
+figure img {
+    display: block;
 }
 
 h1 {
@@ -75,9 +89,19 @@ h1 {
 h2 {
     font-family: raleway;
     font-weight: $light;
-    color: $color-header;
+    color: $color-link;
     font-size: 30px;
     margin: 0;
+}
+
+h3 {
+    @extend %nofrill;
+    font-weight: $light;
+    font-size: 14px;
+    line-height: 1.3em;
+    padding: 10px 0;
+    width: 300px;
+    color: #000;
 }
 
 p {
@@ -92,10 +116,82 @@ section {
 
 article {
     @extend %clearfix;
-    padding: 20px 0;
-    border-bottom: solid 1px #ccc;
-    margin-bottom: 40px;
+    padding-bottom: 80px;
+
+    header {
+        padding: 80px 0 40px;
+    }
 }
+
+%onBlack {
+    background: #000;
+    .title, h3 {
+        color: #fff;
+    }
+    .tags {
+        li {
+            background-color: #404040;
+            color: #ccc;
+        }
+    }
+}
+
+article.tugboat  {
+    @extend %onBlack;
+    padding-bottom: 0px;
+
+    h2, h2 a, h3 {
+        color: $color-tugboat;
+    }
+
+    .content {
+        background: url(../img/lifesaver.jpg) no-repeat right center;
+    }
+
+    .title {
+        color: #fff;
+    }
+
+    .tags {
+        margin: 60px 0 80px 0;
+        max-width: 300px;
+        li {
+            background-color: $color-tugboat;
+            color: #fff;
+        }
+    }
+
+}
+article.subrosa {    
+    h2, h2 a, h3 {
+        color: $color-subrosa;
+    }
+}
+
+article.dailybeast {
+    @extend %onBlack;
+    h2, h2 a {
+        color: $color-beast;
+    }
+    .tags {
+        margin: 60px 0 0px 0;
+        max-width: 480px;
+        li {
+            background-color: $color-beast;
+            color: #fff;
+        }
+    }
+}
+
+article.schematic {
+    background: #eee;
+    h2, h2 a {
+        color: $color-schematic;
+    }
+
+
+}
+
 
 nav {
     @extend %clearfix;
@@ -143,15 +239,39 @@ pre {
 }
 
 .title {
-    @extend h2;
     margin: 0;
-    font-size: 16px;
-    color: #000;
+    font-size: 14px;
+}
+
+.tags {
+    @extend %clearfix;
+    width: 100%;
+    max-width: 400px;
+
+    li {
+        display: block;
+        font-size: 12px;
+        background: #666;
+        color: #fff;
+        padding: 2px 5px;
+        margin: 0 3px 3px 0;
+        float: left;
+    }
+}
+
+.demos {
+    font-family: raleway;
+    margin: 20px 0;
+
+    li {
+        margin-bottom: 5px;
+    }
 }
 
 .imageList {
     @extend %clearfix;
-    margin: 20px 0 20px -5px;
+    margin: 40px 0;
+    width: 960px;
 
     li {
         @extend .nofrill;
@@ -159,49 +279,44 @@ pre {
         overflow: hidden;
         float: left;
         margin: 0px 5px 40px;
+        height: 300px;
         padding-right: 10px;
-        // width: 224px;
-        // height: 220px;
-
-        h3 {
-            // @extend h2;
-            font-weight: $light;
-            font-size: 15px;
-            line-height: 1.3em;
-            color: #666;
-            // background: #404040;
-            margin-top: -11px;
-            width: 212px;
-            padding: 10px;
-            min-height: 60px;
-            // @include customShadow(3px, 3px, 10px, 0, #cccccc);
-            margin-bottom: 10px;
-            // border-left: solid 1px #ccc;
-            // border-bottom: solid 1px #ccc;
-            // border-right: solid 1px #ccc;
-        }
-        
 
         figure {
             @extend %nofrill;
             display: block;
             overflow: hidden;
-            margin-bottom: 10px;
-            @include customShadow(3px, 3px, 10px, 0, #cccccc);
-            border-left: solid 1px #efefef;
-            border-top: solid 1px #efefef;
-            width: 210px;
-        }
-
-        .noshadow {
-            @include customShadow(0, 0, 0, 0, transparent);
-            border: none;
-        }
-
-        img {
             width: 100%;
-            display: block;
+            border-bottom: solid 20px #000;
+            // @include customShadow(3px, 3px, 10px, 0px, #efefef);
+
+            img {
+                width: 100%;
+                display: block;
+            }
         }
+    }
+}
+
+.duoList {
+    @extend %clearfix;
+    margin: 40px 0;
+    width: 100%;
+
+    li {
+        float: right;
+        width: 50%;
+
+        figure {
+            width: 480px;
+            height: 220px;
+            border-bottom: solid 20px #000;
+            background: #fff;
+        }
+
+    }
+    li:first-child {
+        float: left;
     }
 }
 

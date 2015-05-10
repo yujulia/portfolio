@@ -317,15 +317,15 @@ table {
 td, th {
   padding: 0; }
 
-ol, ul, button, .imageList li figure, section, article, nav, footer, .content, .imageList {
+ol, ul, button, figure, h3, .imageList li figure, section, article, nav, footer, .content, .tags, .imageList, .duoList {
   zoom: 1; }
-  ol:before, ul:before, button:before, .imageList li figure:before, section:before, article:before, nav:before, footer:before, .content:before, .imageList:before, ol:after, ul:after, button:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .imageList:after {
+  ol:before, ul:before, button:before, figure:before, h3:before, .imageList li figure:before, section:before, article:before, nav:before, footer:before, .content:before, .tags:before, .imageList:before, .duoList:before, ol:after, ul:after, button:after, figure:after, h3:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after {
     content: "";
     display: table; }
-  ol:after, ul:after, button:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .imageList:after {
+  ol:after, ul:after, button:after, figure:after, h3:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after {
     clear: both; }
 
-ol, ul, button, .imageList li figure {
+ol, ul, button, figure, h3, .imageList li figure {
   margin: 0;
   padding: 0; }
 
@@ -340,15 +340,15 @@ ol, ul, button, .imageList li figure {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-ol, ul, button, .imageList li figure, section, article, nav, footer, .content, .imageList {
+ol, ul, button, figure, h3, .imageList li figure, section, article, nav, footer, .content, .tags, .imageList, .duoList {
   zoom: 1; }
-  ol:before, ul:before, button:before, .imageList li figure:before, section:before, article:before, nav:before, footer:before, .content:before, .imageList:before, ol:after, ul:after, button:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .imageList:after {
+  ol:before, ul:before, button:before, figure:before, h3:before, .imageList li figure:before, section:before, article:before, nav:before, footer:before, .content:before, .tags:before, .imageList:before, .duoList:before, ol:after, ul:after, button:after, figure:after, h3:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after {
     content: "";
     display: table; }
-  ol:after, ul:after, button:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .imageList:after {
+  ol:after, ul:after, button:after, figure:after, h3:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after {
     clear: both; }
 
-ol, ul, button, .imageList li figure {
+ol, ul, button, figure, h3, .imageList li figure {
   margin: 0;
   padding: 0; }
 
@@ -470,6 +470,10 @@ button {
   background: none;
   border: none; }
 
+figure img {
+  display: block;
+  width: 100%; }
+
 :focus {
   outline: none;
   border-bottom: dotted 1px #029fb5; }
@@ -478,18 +482,22 @@ body {
   color: #aaaaaa;
   font-family: PT;
   font-weight: 300;
-  font-size: 15px; }
+  font-size: 15px;
+  padding-bottom: 100px; }
 
 a {
   text-decoration: none;
   color: #029fb5; }
 
 a:hover {
-  color: #01383f; }
+  opacity: 0.7; }
 
 a[class^="cc-"]:before {
   margin-right: 4px;
   font-size: 85%; }
+
+figure img {
+  display: block; }
 
 h1 {
   margin: 100px 0 40px;
@@ -505,12 +513,20 @@ h1 {
     font-size: 20px;
     font-family: raleway; }
 
-h2, .intro, .title {
+h2, .intro {
   font-family: raleway;
   font-weight: 300;
-  color: #999999;
+  color: #029fb5;
   font-size: 30px;
   margin: 0; }
+
+h3 {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.3em;
+  padding: 10px 0;
+  width: 300px;
+  color: #000; }
 
 p {
   font-size: 15px;
@@ -520,9 +536,49 @@ section {
   padding: 40px 0 0 0; }
 
 article {
-  padding: 20px 0;
-  border-bottom: solid 1px #ccc;
-  margin-bottom: 40px; }
+  padding-bottom: 80px; }
+  article header {
+    padding: 80px 0 40px; }
+
+article.tugboat, article.dailybeast {
+  background: #000; }
+  article.tugboat .title, article.dailybeast .title, article.tugboat h3, article.dailybeast h3 {
+    color: #fff; }
+  article.tugboat .tags li, article.dailybeast .tags li {
+    background-color: #404040;
+    color: #ccc; }
+
+article.tugboat {
+  padding-bottom: 0px; }
+  article.tugboat h2, article.tugboat .intro, article.tugboat h2 a, article.tugboat .intro a, article.tugboat h3 {
+    color: #029fb5; }
+  article.tugboat .content {
+    background: url(../img/lifesaver.jpg) no-repeat right center; }
+  article.tugboat .title {
+    color: #fff; }
+  article.tugboat .tags {
+    margin: 60px 0 80px 0;
+    max-width: 300px; }
+    article.tugboat .tags li {
+      background-color: #029fb5;
+      color: #fff; }
+
+article.subrosa h2, article.subrosa .intro, article.subrosa h2 a, article.subrosa .intro a, article.subrosa h3 {
+  color: #2c1a3d; }
+
+article.dailybeast h2, article.dailybeast .intro, article.dailybeast h2 a, article.dailybeast .intro a {
+  color: #e81b41; }
+article.dailybeast .tags {
+  margin: 60px 0 0px 0;
+  max-width: 480px; }
+  article.dailybeast .tags li {
+    background-color: #e81b41;
+    color: #fff; }
+
+article.schematic {
+  background: #eee; }
+  article.schematic h2, article.schematic .intro, article.schematic h2 a, article.schematic .intro a {
+    color: #029cd8; }
 
 nav li {
   display: inline-block;
@@ -557,45 +613,58 @@ pre {
 
 .title {
   margin: 0;
-  font-size: 16px;
-  color: #000; }
+  font-size: 14px; }
+
+.tags {
+  width: 100%;
+  max-width: 400px; }
+  .tags li {
+    display: block;
+    font-size: 12px;
+    background: #666;
+    color: #fff;
+    padding: 2px 5px;
+    margin: 0 3px 3px 0;
+    float: left; }
+
+.demos {
+  font-family: raleway;
+  margin: 20px 0; }
+  .demos li {
+    margin-bottom: 5px; }
 
 .imageList {
-  margin: 20px 0 20px -5px; }
+  margin: 40px 0;
+  width: 960px; }
   .imageList li {
     display: block;
     overflow: hidden;
     float: left;
     margin: 0px 5px 40px;
+    height: 300px;
     padding-right: 10px; }
-    .imageList li h3 {
-      font-weight: 300;
-      font-size: 15px;
-      line-height: 1.3em;
-      color: #666;
-      margin-top: -11px;
-      width: 212px;
-      padding: 10px;
-      min-height: 60px;
-      margin-bottom: 10px; }
     .imageList li figure {
       display: block;
       overflow: hidden;
-      margin-bottom: 10px;
-      -moz-box-shadow: 3px 3px 10px 0 #cccccc;
-      -webkit-box-shadow: 3px 3px 10px 0 #cccccc;
-      box-shadow: 3px 3px 10px 0 #cccccc;
-      border-left: solid 1px #efefef;
-      border-top: solid 1px #efefef;
-      width: 210px; }
-    .imageList li .noshadow {
-      -moz-box-shadow: 0 0 0 0 transparent;
-      -webkit-box-shadow: 0 0 0 0 transparent;
-      box-shadow: 0 0 0 0 transparent;
-      border: none; }
-    .imageList li img {
       width: 100%;
-      display: block; }
+      border-bottom: solid 20px #000; }
+      .imageList li figure img {
+        width: 100%;
+        display: block; }
+
+.duoList {
+  margin: 40px 0;
+  width: 100%; }
+  .duoList li {
+    float: right;
+    width: 50%; }
+    .duoList li figure {
+      width: 480px;
+      height: 220px;
+      border-bottom: solid 20px #000;
+      background: #fff; }
+  .duoList li:first-child {
+    float: left; }
 
 @media screen and (max-width: 980px) {
   .content {
