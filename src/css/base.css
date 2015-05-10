@@ -19,7 +19,8 @@ ol, ul, button, figure, h3 {
   speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle; }
 
 ol, ul, button, figure, h3, section, article, nav, footer, .content, .tags, .imageList, .duoList, .duoList li {
   zoom: 1; }
@@ -42,7 +43,8 @@ ol, ul, button, figure, h3 {
   speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle; }
 
 @font-face {
   font-family: 'code';
@@ -231,8 +233,10 @@ button {
   border: none; }
 
 figure img {
-  display: block;
   width: 100%; }
+
+img {
+  display: block; }
 
 :focus {
   outline: none;
@@ -240,7 +244,7 @@ figure img {
 
 body {
   color: #aaaaaa;
-  font-family: PT;
+  font-family: PT, verdana, sans-serif;
   font-weight: 300;
   font-size: 15px;
   padding-bottom: 100px; }
@@ -261,27 +265,28 @@ figure img {
 
 h1 {
   margin: 100px 0 40px;
-  font-family: code;
+  font-family: code, verdana, sans-serif;
   font-weight: 300;
   color: #999999;
-  font-size: 50px; }
+  font-size: 50px;
+  line-height: 1.2em; }
   h1 a {
     color: inherit; }
   h1 span {
     display: block; }
   h1 span, h1 .deemphasize {
     font-size: 20px;
-    font-family: raleway; }
+    font-family: raleway, verdana, sans-serif; }
 
 h2, .intro {
-  font-family: raleway;
+  font-family: raleway, verdana, sans-serif;
   font-weight: 300;
   color: #ff9900;
   font-size: 30px;
   margin: 0; }
 
 h3 {
-  font-family: raleway;
+  font-family: raleway, verdana, sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.3em;
@@ -307,28 +312,32 @@ article {
 article.tugboat, article.dailybeast {
   background: #000; }
   article.tugboat .title, article.dailybeast .title, article.tugboat h3, article.dailybeast h3 {
-    color: #fff; }
+    color: #efefef; }
   article.tugboat .tags li, article.dailybeast .tags li {
     background-color: #404040;
     color: #ccc; }
 
 article.tugboat {
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  background: #000 url(../img/lifesaver.jpg) no-repeat right center; }
   article.tugboat h2, article.tugboat .intro, article.tugboat h2 a, article.tugboat .intro a, article.tugboat h3, article.tugboat a {
     color: #029fb5; }
-  article.tugboat .content {
-    background: url(../img/lifesaver.jpg) no-repeat right center; }
-  article.tugboat .title {
-    color: #fff; }
   article.tugboat .tags {
     margin: 60px 0 80px 0;
     max-width: 300px; }
     article.tugboat .tags li {
       background-color: #029fb5;
       color: #fff; }
+  article.tugboat h2 span, article.tugboat .intro span, article.tugboat p span, article.tugboat a span {
+    background: black;
+    background: rgba(0, 0, 0, 0.7);
+    display: inline-block;
+    padding: 5px 5px 5px 0; }
 
-article.subrosa h2, article.subrosa .intro, article.subrosa h2 a, article.subrosa .intro a, article.subrosa h3, article.subrosa .imageList li a {
-  color: #2c1a3d; }
+article.subrosa {
+  background: #f3f3f3; }
+  article.subrosa h2, article.subrosa .intro, article.subrosa h2 a, article.subrosa .intro a, article.subrosa h3, article.subrosa .imageList li a {
+    color: #2c1a3d; }
 
 article.dailybeast {
   padding-bottom: 0; }
@@ -344,7 +353,7 @@ article.dailybeast {
     width: 100%; }
 
 article.schematic {
-  background: #eee; }
+  background: #f3f3f3; }
   article.schematic h2, article.schematic .intro, article.schematic h2 a, article.schematic .intro a {
     color: #029cd8; }
 
@@ -388,8 +397,8 @@ pre {
   line-height: 1.4em; }
 
 .title {
-  margin: 0;
-  font-size: 14px; }
+  margin: 10px 0 0 0;
+  font-size: 16px; }
 
 .tags {
   width: 100%;
@@ -404,7 +413,7 @@ pre {
     float: left; }
 
 .imageList {
-  margin: 40px 0;
+  margin: 40px 0 0 0;
   width: 100%; }
   .imageList > li {
     display: block;
@@ -414,8 +423,7 @@ pre {
     margin-right: 13px; }
     .imageList > li figure {
       width: 300px;
-      height: 200px;
-      border-bottom: solid 13px #000; }
+      height: 200px; }
     .imageList > li a:before {
       padding-left: 1px;
       font-size: 18px;
@@ -445,6 +453,30 @@ pre {
       float: right;
       padding-left: 10px; }
 
+.betweenImage, .screencaps img {
+  margin-bottom: 100px; }
+
+.screencaps {
+  background: #f3f3f3;
+  padding-top: 80px; }
+
+a.back {
+  font-size: 20px;
+  margin-top: 40px;
+  display: inline-block;
+  font-family: code, verdana, sans-serif; }
+
+a.back:before {
+  font-size: 20px; }
+
+section.demo {
+  position: relative;
+  padding: 80px 0;
+  background-color: #ccc; }
+  section.demo h2, section.demo .intro {
+    color: #fff;
+    margin-bottom: 60px; }
+
 @media screen and (max-width: 980px) {
   .content {
     width: 100%; } }
@@ -454,12 +486,12 @@ pre {
     display: block;
     margin-bottom: 10px; }
   article.tugboat .content {
-    background-image: none; }
+    padding: 0; }
+    article.tugboat .content h2 span, article.tugboat .content .intro span, article.tugboat .content a span, article.tugboat .content p span {
+      padding: 10px; }
   .imageList li {
     float: none;
     margin: 0; }
-    .imageList li figure {
-      margin: 0 auto; }
   .duoList li {
     float: none;
     width: 100%;

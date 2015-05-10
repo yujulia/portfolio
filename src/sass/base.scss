@@ -25,9 +25,12 @@ button {
 figure {
     @extend %nofrill;
     img {
-        display: block;
         width: 100%;
     }
+}
+
+img {
+    display: block;
 }
 
 :focus {
@@ -39,9 +42,7 @@ figure {
 
 body {
     color: $color-text;
-    // color: #fff;
-    // background: #000;
-    font-family: PT;
+    font-family: $font-body;
     font-weight: $light;
     font-size: 15px;
     padding-bottom: 100px;
@@ -68,10 +69,11 @@ figure img {
 
 h1 {
     margin: 100px 0 40px;
-    font-family: code;
+    font-family: $font-cap;
     font-weight: $light;
     color: $color-header;
     font-size: 50px;
+    line-height: 1.2em;
 
     a {
         color: inherit;
@@ -83,12 +85,12 @@ h1 {
 
     span, .deemphasize {
         font-size: 20px;
-        font-family: raleway;
+        font-family: $font-title;
     }
 }
 
 h2 {
-    font-family: raleway;
+    font-family: $font-title;
     font-weight: $light;
     color: $color-link;
     font-size: 30px;
@@ -97,7 +99,7 @@ h2 {
 
 h3 {
     @extend %nofrill;
-    font-family: raleway;
+    font-family: $font-title;
     font-weight: $light;
     font-size: 16px;
     line-height: 1.3em;
@@ -131,7 +133,7 @@ article {
 %onBlack {
     background: #000;
     .title, h3 {
-        color: #fff;
+        color: #efefef;
     }
     .tags {
         li {
@@ -149,12 +151,10 @@ article.tugboat  {
         color: $color-tugboat;
     }
 
-    .content {
-        background: url(../img/lifesaver.jpg) no-repeat right center;
-    }
+    background: #000 url(../img/lifesaver.jpg) no-repeat right center;
 
-    .title {
-        color: #fff;
+    .content {
+        // background: url(../img/lifesaver.jpg) no-repeat right center;
     }
 
     .tags {
@@ -166,8 +166,19 @@ article.tugboat  {
         }
     }
 
+    h2, p, a {
+        span {
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            padding: 5px 5px 5px 0;
+        }
+    }
+
 }
 article.subrosa {    
+    background: $color-bg;
+
     h2, h2 a, h3, .imageList li a  {
         color: $color-subrosa;
     }
@@ -197,7 +208,7 @@ article.dailybeast {
 }
 
 article.schematic {
-    background: #eee;
+    background: $color-bg;
     h2, h2 a {
         color: $color-schematic;
     }
@@ -263,8 +274,8 @@ pre {
 }
 
 .title {
-    margin: 0;
-    font-size: 14px;
+    margin: 10px 0 0 0;
+    font-size: 16px;
 }
 
 .tags {
@@ -287,7 +298,7 @@ pre {
 
 .imageList {
     @extend %clearfix;
-    margin: 40px 0;
+    margin: 40px 0 0 0;
     width: 100%;
 
     > li {
@@ -301,7 +312,7 @@ pre {
         figure {
             width: 300px;
             height: 200px;
-            border-bottom: solid 13px #000;
+            // border-bottom: solid 13px #000;
         }
 
 
@@ -341,6 +352,38 @@ pre {
     }
 }
 
+.betweenImage, .screencaps img {
+    margin-bottom: 100px;
+}
+
+.screencaps {
+    background: $color-bg;
+    padding-top: 80px;
+}
+
+a.back {
+    font-size: 20px;
+    margin-top: 40px;
+    display: inline-block;
+    font-family: $font-cap;
+}
+
+a.back:before {
+    font-size: 20px;
+}
+
+section.demo {
+    @extend %clear;
+    position: relative;
+    padding: 80px 0;
+    background-color: #ccc;
+
+    h2 {
+        color: #fff;
+        margin-bottom: 60px;
+    }
+}
+
 // ------------------------------------  ipad and smaller
 @media screen and (max-width: 980px) {
     .content {
@@ -358,17 +401,18 @@ pre {
     }
 
     article.tugboat .content {
-        background-image: none;
+        padding: 0;
+
+        h2, a, p {
+            span {
+                padding: 10px;
+            }
+        }
     }
 
     .imageList li  {
         float: none;
-        margin: 0;
-
-        figure {
-            margin: 0 auto;
-        }
-        
+        margin: 0;        
     }
 
     .duoList {

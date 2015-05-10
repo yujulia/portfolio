@@ -7,6 +7,9 @@ $book: 500;
 $semibold: 600;
 $bold: 700;
 
+$font-cap: code, verdana, sans-serif;
+$font-title: raleway, verdana, sans-serif;
+$font-body: PT, verdana, sans-serif;
 // ----------------------------------------------- colors
 
 $color-text: #aaaaaa;
@@ -15,6 +18,7 @@ $color-header: #999999;
 
 $color-link: #ff9900;
 $color-hover: #01383f;
+$color-bg: #f3f3f3;
 
 $color-beast: #e81b41;
 $color-subrosa: #2c1a3d;
@@ -60,6 +64,7 @@ $color-nyu: #58068c;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
 }
 
 // ----------------------------------------------- mixins
