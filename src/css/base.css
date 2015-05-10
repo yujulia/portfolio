@@ -273,7 +273,8 @@ h1 {
   h1 a {
     color: inherit; }
   h1 span {
-    display: block; }
+    display: block;
+    margin-top: -20px; }
   h1 span, h1 .deemphasize {
     font-size: 20px;
     font-family: raleway, verdana, sans-serif; }
@@ -479,7 +480,11 @@ section.demo {
 
 @media screen and (max-width: 980px) {
   .content {
-    width: 100%; } }
+    width: 100%; }
+  article.tugboat {
+    background-position: 500px center; }
+  .imageList li {
+    margin-right: 40px; } }
 
 @media screen and (max-width: 600px) {
   nav li {
