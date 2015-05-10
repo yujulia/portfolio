@@ -135,8 +135,87 @@ ol, ul, button, figure, h3 {
 .cc-moon:before {
   content: "\e013"; }
 
-.cc-book-after:after {
-  content: "\e012"; }
+.cc-eye:before {
+  content: "\e011"; }
+
+.cc-code:before {
+  content: "\e014"; }
+
+.cc-like:before {
+  content: "\e016"; }
+
+.cc-pictures:before {
+  content: "\e015"; }
+
+.cc-info:before {
+  content: "\e018"; }
+
+.s-schematic {
+  background-image: url(../img/sprite-schematic.png);
+  background-repeat: no-repeat;
+  display: block; }
+
+.s-clues {
+  background-position: -5px -5px; }
+
+.s-bbc {
+  background-position: -315px -5px; }
+
+.s-bible {
+  background-position: -5px -215px; }
+
+.s-hsn {
+  background-position: -315px -215px; }
+
+.s-sesame {
+  background-position: -625px -5px; }
+
+.s-vevo {
+  background-position: -625px -215px; }
+
+.all-subrosa {
+  background-image: url(../img/sprite-subrosa.png);
+  background-repeat: no-repeat;
+  display: block; }
+
+.s-bike {
+  background-position: -5px -5px; }
+
+.s-brvtvs {
+  background-position: -315px -5px; }
+
+.s-defiance {
+  background-position: -5px -215px; }
+
+.s-fcukfragrance {
+  background-position: -315px -215px; }
+
+.s-foc {
+  background-position: -5px -425px; }
+
+.s-friction {
+  background-position: -315px -425px; }
+
+.s-gegarage {
+  background-position: -5px -635px; }
+
+.s-gotube {
+  background-position: -315px -635px; }
+
+.s-kss {
+  background-position: -625px -5px; }
+
+.s-mamo {
+  background-position: -625px -215px; }
+
+.s-nike {
+  background-position: -625px -425px; }
+
+.s-rachelzoe {
+  background-position: -625px -635px; }
+
+.s-subrosa {
+  background-position: -5px -845px; }
 
 html {
   box-sizing: border-box; }
@@ -202,12 +281,16 @@ h2, .intro {
   margin: 0; }
 
 h3 {
+  font-family: raleway;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.3em;
-  padding: 10px 0;
+  padding: 10px 0 10px 0;
   width: 300px;
-  color: #000; }
+  height: 60px;
+  color: #000;
+  display: table-cell;
+  vertical-align: middle; }
 
 p {
   font-size: 15px;
@@ -231,7 +314,7 @@ article.tugboat, article.dailybeast {
 
 article.tugboat {
   padding-bottom: 0px; }
-  article.tugboat h2, article.tugboat .intro, article.tugboat h2 a, article.tugboat .intro a, article.tugboat h3 {
+  article.tugboat h2, article.tugboat .intro, article.tugboat h2 a, article.tugboat .intro a, article.tugboat h3, article.tugboat a {
     color: #029fb5; }
   article.tugboat .content {
     background: url(../img/lifesaver.jpg) no-repeat right center; }
@@ -244,13 +327,15 @@ article.tugboat {
       background-color: #029fb5;
       color: #fff; }
 
-article.subrosa h2, article.subrosa .intro, article.subrosa h2 a, article.subrosa .intro a, article.subrosa h3 {
+article.subrosa h2, article.subrosa .intro, article.subrosa h2 a, article.subrosa .intro a, article.subrosa h3, article.subrosa .imageList li a {
   color: #2c1a3d; }
 
 article.dailybeast {
   padding-bottom: 0; }
   article.dailybeast h2, article.dailybeast .intro, article.dailybeast h2 a, article.dailybeast .intro a {
     color: #e81b41; }
+  article.dailybeast h3 {
+    display: block; }
   article.dailybeast .tags li {
     background-color: #e81b41;
     color: #fff; }
@@ -318,23 +403,23 @@ pre {
     margin: 0 3px 3px 0;
     float: left; }
 
-.demos {
-  font-family: raleway;
-  margin: 20px 0; }
-  .demos li {
-    margin-bottom: 5px; }
-
 .imageList {
   margin: 40px 0;
   width: 100%; }
-  .imageList li {
+  .imageList > li {
     display: block;
     overflow: hidden;
     float: left;
-    height: 300px;
+    min-height: 330px;
     margin-right: 13px; }
-    .imageList li figure {
-      border-bottom: solid 15px #000; }
+    .imageList > li figure {
+      width: 300px;
+      height: 200px;
+      border-bottom: solid 13px #000; }
+    .imageList > li a:before {
+      padding-left: 1px;
+      font-size: 18px;
+      vertical-align: middle; }
 
 .duoList {
   margin: 40px 0 0 0;
@@ -372,7 +457,9 @@ pre {
     background-image: none; }
   .imageList li {
     float: none;
-    margin: 0 -10px; }
+    margin: 0; }
+    .imageList li figure {
+      margin: 0 auto; }
   .duoList li {
     float: none;
     width: 100%;
