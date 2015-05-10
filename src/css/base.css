@@ -1,12 +1,12 @@
-ol, ul, button, figure, h3, .imageList li figure, section, article, nav, footer, .content, .tags, .imageList, .duoList {
+ol, ul, button, figure, h3, section, article, nav, footer, .content, .tags, .imageList, .duoList, .duoList li {
   zoom: 1; }
-  ol:before, ul:before, button:before, figure:before, h3:before, .imageList li figure:before, section:before, article:before, nav:before, footer:before, .content:before, .tags:before, .imageList:before, .duoList:before, ol:after, ul:after, button:after, figure:after, h3:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after {
+  ol:before, ul:before, button:before, figure:before, h3:before, section:before, article:before, nav:before, footer:before, .content:before, .tags:before, .imageList:before, .duoList:before, .duoList li:before, ol:after, ul:after, button:after, figure:after, h3:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after, .duoList li:after {
     content: "";
     display: table; }
-  ol:after, ul:after, button:after, figure:after, h3:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after {
+  ol:after, ul:after, button:after, figure:after, h3:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after, .duoList li:after {
     clear: both; }
 
-ol, ul, button, figure, h3, .imageList li figure {
+ol, ul, button, figure, h3 {
   margin: 0;
   padding: 0; }
 
@@ -21,15 +21,15 @@ ol, ul, button, figure, h3, .imageList li figure {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-ol, ul, button, figure, h3, .imageList li figure, section, article, nav, footer, .content, .tags, .imageList, .duoList {
+ol, ul, button, figure, h3, section, article, nav, footer, .content, .tags, .imageList, .duoList, .duoList li {
   zoom: 1; }
-  ol:before, ul:before, button:before, figure:before, h3:before, .imageList li figure:before, section:before, article:before, nav:before, footer:before, .content:before, .tags:before, .imageList:before, .duoList:before, ol:after, ul:after, button:after, figure:after, h3:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after {
+  ol:before, ul:before, button:before, figure:before, h3:before, section:before, article:before, nav:before, footer:before, .content:before, .tags:before, .imageList:before, .duoList:before, .duoList li:before, ol:after, ul:after, button:after, figure:after, h3:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after, .duoList li:after {
     content: "";
     display: table; }
-  ol:after, ul:after, button:after, figure:after, h3:after, .imageList li figure:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after {
+  ol:after, ul:after, button:after, figure:after, h3:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after, .duoList li:after {
     clear: both; }
 
-ol, ul, button, figure, h3, .imageList li figure {
+ol, ul, button, figure, h3 {
   margin: 0;
   padding: 0; }
 
@@ -157,7 +157,7 @@ figure img {
 
 :focus {
   outline: none;
-  border-bottom: dotted 1px #029fb5; }
+  border-bottom: dotted 1px #ff9900; }
 
 body {
   color: #aaaaaa;
@@ -168,7 +168,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #029fb5; }
+  color: #ff9900; }
 
 a:hover {
   opacity: 0.7; }
@@ -197,7 +197,7 @@ h1 {
 h2, .intro {
   font-family: raleway;
   font-weight: 300;
-  color: #029fb5;
+  color: #ff9900;
   font-size: 30px;
   margin: 0; }
 
@@ -247,25 +247,35 @@ article.tugboat {
 article.subrosa h2, article.subrosa .intro, article.subrosa h2 a, article.subrosa .intro a, article.subrosa h3 {
   color: #2c1a3d; }
 
-article.dailybeast h2, article.dailybeast .intro, article.dailybeast h2 a, article.dailybeast .intro a {
-  color: #e81b41; }
-article.dailybeast .tags {
-  margin: 60px 0 0px 0;
-  max-width: 480px; }
+article.dailybeast {
+  padding-bottom: 0; }
+  article.dailybeast h2, article.dailybeast .intro, article.dailybeast h2 a, article.dailybeast .intro a {
+    color: #e81b41; }
   article.dailybeast .tags li {
     background-color: #e81b41;
     color: #fff; }
+  article.dailybeast h3 {
+    background-color: #000;
+    width: 100%; }
 
 article.schematic {
   background: #eee; }
   article.schematic h2, article.schematic .intro, article.schematic h2 a, article.schematic .intro a {
     color: #029cd8; }
 
+article.razorfish {
+  background: #adbd29; }
+  article.razorfish h2, article.razorfish .intro, article.razorfish h2 a, article.razorfish .intro a, article.razorfish .title {
+    color: #fff; }
+  article.razorfish .tags li {
+    background-color: #fff;
+    color: #adbd29; }
+
 nav li {
   display: inline-block;
   margin-right: 20px; }
   nav li a {
-    color: #029fb5; }
+    color: #ff9900; }
   nav li a:before {
     font-size: 14px; }
 
@@ -316,36 +326,39 @@ pre {
 
 .imageList {
   margin: 40px 0;
-  width: 960px; }
+  width: 100%; }
   .imageList li {
     display: block;
     overflow: hidden;
     float: left;
-    margin: 0px 5px 40px;
     height: 300px;
-    padding-right: 10px; }
+    margin-right: 13px; }
     .imageList li figure {
-      display: block;
-      overflow: hidden;
-      width: 100%;
-      border-bottom: solid 20px #000; }
-      .imageList li figure img {
-        width: 100%;
-        display: block; }
+      border-bottom: solid 15px #000; }
 
 .duoList {
-  margin: 40px 0;
+  margin: 40px 0 0 0;
   width: 100%; }
   .duoList li {
     float: right;
-    width: 50%; }
+    width: 50%;
+    background-color: #fff; }
     .duoList li figure {
-      width: 480px;
-      height: 220px;
-      border-bottom: solid 20px #000;
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      max-height: 220px;
       background: #fff; }
   .duoList li:first-child {
-    float: left; }
+    float: left;
+    background-color: #e81b41; }
+    .duoList li:first-child figure {
+      float: right; }
+    .duoList li:first-child h3 span {
+      width: 100%;
+      max-width: 480px;
+      float: right;
+      padding-left: 10px; }
 
 @media screen and (max-width: 980px) {
   .content {
@@ -354,4 +367,17 @@ pre {
 @media screen and (max-width: 600px) {
   nav li {
     display: block;
-    margin-bottom: 10px; } }
+    margin-bottom: 10px; }
+  article.tugboat .content {
+    background-image: none; }
+  .imageList li {
+    float: none;
+    margin: 0 -10px; }
+  .duoList li {
+    float: none;
+    width: 100%;
+    margin-bottom: 40px; }
+    .duoList li h3 {
+      padding-left: 10px; }
+  .duoList li:first-child h3 span {
+    padding: 0; } }

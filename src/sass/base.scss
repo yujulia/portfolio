@@ -170,16 +170,21 @@ article.subrosa {
 
 article.dailybeast {
     @extend %onBlack;
+    padding-bottom: 0;
+
     h2, h2 a {
         color: $color-beast;
     }
     .tags {
-        margin: 60px 0 0px 0;
-        max-width: 480px;
         li {
             background-color: $color-beast;
             color: #fff;
         }
+    }
+
+    h3 {
+        background-color: #000;
+        width: 100%;
     }
 }
 
@@ -188,9 +193,20 @@ article.schematic {
     h2, h2 a {
         color: $color-schematic;
     }
-
-
 }
+
+article.razorfish {
+    background: $color-razorfish;
+
+    h2, h2 a, .title {
+        color: #fff;
+    }
+    .tags li {
+        background-color: #fff;
+        color: $color-razorfish;
+    }
+}
+
 
 
 nav {
@@ -271,52 +287,47 @@ pre {
 .imageList {
     @extend %clearfix;
     margin: 40px 0;
-    width: 960px;
+    width: 100%;
 
     li {
         @extend .nofrill;
         display: block;
         overflow: hidden;
         float: left;
-        margin: 0px 5px 40px;
         height: 300px;
-        padding-right: 10px;
+        margin-right: 13px;
 
         figure {
-            @extend %nofrill;
-            display: block;
-            overflow: hidden;
-            width: 100%;
-            border-bottom: solid 20px #000;
-            // @include customShadow(3px, 3px, 10px, 0px, #efefef);
-
-            img {
-                width: 100%;
-                display: block;
-            }
+            border-bottom: solid 15px #000;
         }
     }
 }
 
 .duoList {
     @extend %clearfix;
-    margin: 40px 0;
+    margin: 40px 0 0 0;
     width: 100%;
 
     li {
         float: right;
         width: 50%;
+        @extend %clearfix;
+        background-color: #fff;
 
         figure {
-            width: 480px;
-            height: 220px;
-            border-bottom: solid 20px #000;
+            display: block;
+            width: 100%;
+            max-width: 480px;
+            max-height: 220px;
             background: #fff;
         }
 
     }
     li:first-child {
         float: left;
+        background-color: $color-beast;
+        figure { float: right; }
+        h3 span { width: 100%; max-width: 480px; float: right; padding-left: 10px; }
     }
 }
 
@@ -325,6 +336,7 @@ pre {
     .content {
         width: 100%;
     }
+
 }
 
 // ------------------------------------  iphone
@@ -334,5 +346,28 @@ pre {
             display: block;
             margin-bottom: 10px;
         }
+    }
+
+    article.tugboat .content {
+        background-image: none;
+    }
+
+    .imageList li  {
+        float: none;
+        margin: 0 -10px;
+    }
+
+    .duoList {
+        li {
+            float: none;
+            width: 100%;
+            margin-bottom: 40px;
+
+            h3 {
+                padding-left: 10px;
+            }
+        }
+
+        li:first-child h3 span { padding: 0; }
     }
 }
