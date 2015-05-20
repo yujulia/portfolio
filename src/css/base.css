@@ -323,11 +323,17 @@ article.tugboat, article.dailybeast {
 
 article.tugboat {
   padding-bottom: 0px;
-  background: #000 url(../img/lifesaver.jpg) no-repeat right center; }
+  position: relative;
+  min-height: 389px; }
+  article.tugboat #bg-tugboat {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -194px; }
   article.tugboat h2, article.tugboat .intro, article.tugboat h2 a, article.tugboat .intro a, article.tugboat h3, article.tugboat a {
     color: #029fb5; }
   article.tugboat .tags {
-    margin: 60px 0 80px 0;
+    margin: 50px 0 0 0;
     max-width: 300px; }
     article.tugboat .tags li {
       background-color: #029fb5;
@@ -484,8 +490,9 @@ section.demo {
 @media screen and (max-width: 980px) {
   .content {
     width: 100%; }
-  article.tugboat {
-    background-position: 500px center; }
+  #bg-tugboat {
+    right: auto;
+    left: 300px; }
   .imageList li {
     margin-right: 40px; } }
 
@@ -493,12 +500,12 @@ section.demo {
   nav li {
     display: block;
     margin-bottom: 10px; }
-  article.tugboat {
-    background-position: right center; }
-    article.tugboat .content {
-      padding: 0; }
-      article.tugboat .content h2 span, article.tugboat .content .intro span, article.tugboat .content a span, article.tugboat .content p span {
-        padding: 10px; }
+  article.tugboat #bg-tugboat {
+    left: 100px; }
+  article.tugboat .content {
+    padding: 0; }
+    article.tugboat .content h2 span, article.tugboat .content .intro span, article.tugboat .content a span, article.tugboat .content p span {
+      padding: 10px; }
   .imageList li {
     float: none;
     margin: 0; }
