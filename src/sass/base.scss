@@ -131,6 +131,10 @@ article {
     }
 }
 
+.noshow {
+    display: none;
+}
+
 %onBlack {
     background: #000;
     .title, h3 {
@@ -153,10 +157,6 @@ article.tugboat  {
     }
 
     background: #000 url(../img/lifesaver.jpg) no-repeat right center;
-
-    .content {
-        // background: url(../img/lifesaver.jpg) no-repeat right center;
-    }
 
     .tags {
         margin: 60px 0 80px 0;
@@ -409,12 +409,17 @@ section.demo {
         }
     }
 
-    article.tugboat .content {
-        padding: 0;
+    article.tugboat {
 
-        h2, a, p {
-            span {
-                padding: 10px;
+        background-position: right center;
+
+        .content {
+            padding: 0;
+
+            h2, a, p {
+                span {
+                    padding: 10px;
+                }
             }
         }
     }
@@ -432,6 +437,11 @@ section.demo {
 
             h3 {
                 padding-left: 10px;
+            }
+
+            figure img {
+                width: 100%;
+                height: auto;
             }
         }
 
