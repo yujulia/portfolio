@@ -490,6 +490,8 @@ section.demo {
 @media screen and (max-width: 980px) {
   .content {
     width: 100%; }
+  article.tugboat {
+    overflow: hidden; }
   #bg-tugboat {
     right: auto;
     left: 300px; }

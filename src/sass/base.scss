@@ -154,6 +154,7 @@ article.tugboat  {
     position: relative;
     min-height: 389px;
 
+
     #bg-tugboat {
         position: absolute;
         right: 0;
@@ -398,6 +399,10 @@ section.demo {
         width: 100%;
     }
 
+    article.tugboat {
+        overflow: hidden;
+    }
+    
     #bg-tugboat {
         right: auto;
         left: 300px;
