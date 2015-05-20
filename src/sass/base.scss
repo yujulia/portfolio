@@ -136,7 +136,6 @@ article {
 }
 
 %onBlack {
-    background: #000;
     .title, h3 {
         color: #efefef;
     }
@@ -151,16 +150,8 @@ article {
 article.tugboat  {
     @extend %onBlack;
     padding-bottom: 0px;
-    position: relative;
+    background: #000 url(../img/tugboat.jpg) no-repeat right center;
     min-height: 389px;
-
-
-    #bg-tugboat {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        margin-top: -194px;
-    }
 
     h2, h2 a, h3, a {
         color: $color-tugboat;
@@ -195,6 +186,7 @@ article.subrosa {
 
 article.dailybeast {
     @extend %onBlack;
+    background: #000;
     padding-bottom: 0;
 
     h2, h2 a {
@@ -400,12 +392,7 @@ section.demo {
     }
 
     article.tugboat {
-        overflow: hidden;
-    }
-    
-    #bg-tugboat {
-        right: auto;
-        left: 300px;
+        background-position: 300px center;
     }
 
     .imageList li  {
@@ -424,9 +411,7 @@ section.demo {
 
     article.tugboat {
 
-        #bg-tugboat {
-            left: 100px;
-        }
+        background-position: 100px center;
 
         .content {
             padding: 0;

@@ -313,23 +313,16 @@ article {
 .noshow {
   display: none; }
 
-article.tugboat, article.dailybeast {
-  background: #000; }
-  article.tugboat .title, article.dailybeast .title, article.tugboat h3, article.dailybeast h3 {
-    color: #efefef; }
-  article.tugboat .tags li, article.dailybeast .tags li {
-    background-color: #404040;
-    color: #ccc; }
+article.tugboat .title, article.dailybeast .title, article.tugboat h3, article.dailybeast h3 {
+  color: #efefef; }
+article.tugboat .tags li, article.dailybeast .tags li {
+  background-color: #404040;
+  color: #ccc; }
 
 article.tugboat {
   padding-bottom: 0px;
-  position: relative;
+  background: #000 url(../img/tugboat.jpg) no-repeat right center;
   min-height: 389px; }
-  article.tugboat #bg-tugboat {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    margin-top: -194px; }
   article.tugboat h2, article.tugboat .intro, article.tugboat h2 a, article.tugboat .intro a, article.tugboat h3, article.tugboat a {
     color: #029fb5; }
   article.tugboat .tags {
@@ -350,6 +343,7 @@ article.subrosa {
     color: #2c1a3d; }
 
 article.dailybeast {
+  background: #000;
   padding-bottom: 0; }
   article.dailybeast h2, article.dailybeast .intro, article.dailybeast h2 a, article.dailybeast .intro a {
     color: #e81b41; }
@@ -491,10 +485,7 @@ section.demo {
   .content {
     width: 100%; }
   article.tugboat {
-    overflow: hidden; }
-  #bg-tugboat {
-    right: auto;
-    left: 300px; }
+    background-position: 300px center; }
   .imageList li {
     margin-right: 40px; } }
 
@@ -502,12 +493,12 @@ section.demo {
   nav li {
     display: block;
     margin-bottom: 10px; }
-  article.tugboat #bg-tugboat {
-    left: 100px; }
-  article.tugboat .content {
-    padding: 0; }
-    article.tugboat .content h2 span, article.tugboat .content .intro span, article.tugboat .content a span, article.tugboat .content p span {
-      padding: 10px; }
+  article.tugboat {
+    background-position: 100px center; }
+    article.tugboat .content {
+      padding: 0; }
+      article.tugboat .content h2 span, article.tugboat .content .intro span, article.tugboat .content a span, article.tugboat .content p span {
+        padding: 10px; }
   .imageList li {
     float: none;
     margin: 0; }
