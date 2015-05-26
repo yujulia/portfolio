@@ -38,7 +38,8 @@ var gulp = require("gulp"),
     jade = require("gulp-jade"),
     symlink = require("gulp-sym"),
     uglify = require("gulp-uglify"),
-    jshint = require("gulp-jshint");
+    jshint = require("gulp-jshint"),
+    data = require("./data/projects.json");
 
 // -------------------------------------------------------- tasks
 /**  
@@ -79,9 +80,12 @@ gulp.task("scripts", function(){
     generate HTML from JADE templates
 **/
 gulp.task("build-jade", function(){
+
+    var jdata = JSON.parse(JSON.stringify(data));
+
     return gulp.src(JADE_SRC+"*.jade")
         .pipe(jade({ 
-            locals: { "dev" : true, "timestamp":  gutil.date('mmm d, yyyy h:MM:ss TT Z') },
+            locals: { "dev" : true, "data" : jdata, "timestamp":  gutil.date('mmm d, yyyy h:MM:ss TT Z') },
             pretty: true
         }))
         .pipe(gulp.dest(HTML_BUILD));

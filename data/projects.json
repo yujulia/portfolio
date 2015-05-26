@@ -1,0 +1,78 @@
+{ 
+    "subrosa" :
+    [
+        { 
+            "id": "brvtvs", 
+            "name": "BRVTVS Store Front", 
+            "link": "http://brvtvs.com", 
+            "stack": ["HTML","Javascript", "jQuery", "CSS", "Big Cartel", "responsive"] 
+        },
+        { 
+            "id": "subrosa",  
+            "name": "Sub Rosa",  
+            "link": "http://subrosa.com",  
+            "stack": ["HTML","Javascript", "jQuery", "jQuery UI", "SASS", "HAML", "Ruby on Rails"], 
+            "gitsample": "https://github.com/yujulia/sample/tree/master/panzoom" 
+        },
+        { 
+            "id": "defiance",  
+            "name": "SyFy Defiance Need Want Bar for TED 2013",  
+            "detail": "defiance",  
+            "stack": ["HTML","Javascript", "jQuery", "Transit", "SASS"], 
+            "gitsample": "https://github.com/yujulia/sample/tree/master/flip" 
+        },
+        { 
+            "id": "nike",  
+            "name": "Nike Flyknit Collective",  
+            "stack": ["HTML","Javascript", "SASS", "Ruby on Rails"] 
+        },
+        { 
+            "id": "foc",  
+            "name": "Fashion Outlet of Chicago",  
+            "stack": ["HTML","Javascript", "jQuery", "Transit", "SASS"], 
+            "gitsample": "https://github.com/yujulia/sample/blob/master/terminal-js/base.js" 
+        },
+        { 
+            "id": "fcukfragrance",  
+            "name": "FCUK Fragrance",  
+            "stack": ["HTML", "Javascript", "jQuery", "PHP", "ecommerce"] 
+        },
+        { 
+            "id": "friction", 
+            "name": "FCUK Friction",  
+            "stack": ["HTML", "Javascript", "jQuery", "PHP", "Parallax"]
+        },
+        { 
+            "id": "rachelzoe", 
+            "name": "Neiman Marcus Rachel Zoe Facebook App", 
+            "detail": "zoe", 
+            "stack": ["HTML", "Javascript", "jQuery", "jQuery UI", "PHP", "Facebook App", "Drag n Drop", "Canvas"], 
+            "gitsample": "https://github.com/yujulia/sample/tree/master/dragresize"
+        },
+        { 
+            "id": "gotube", 
+            "name": "Target GoTube for 2012 London Olympics", 
+            "stack": ["HTML", "SASS"] 
+        },
+        { 
+            "id": "gegarage", 
+            "name": "GE Garages Event Board", 
+            "stack": ["HTML", "SASS"] 
+        },
+        { 
+            "id": "mamo", 
+            "name": "GE For Woman By Woman", 
+            "stack": ["HTML", "SASS", "Javascript", "Node", "Express", "Socket.io"]  
+        },
+        { 
+            "id": "kss", 
+            "name": "Kate Spade Saturday", 
+            "stack": ["HTML", "SASS", "Javascript", "responsive"] 
+        },
+        { 
+            "id": "bike", 
+            "name": "Levi Bikeshop x Urbanoutfitters", 
+            "stack": ["HTML", "CSS", "Facebook App"] 
+        }
+    ]
+}

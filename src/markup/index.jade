@@ -47,7 +47,6 @@ mixin imglist(projects, company)
                         a(href="#{val.detail}.html", class="cc-pictures", target="_blank") detail 
                     if val.gitsample 
                         a(href="#{val.gitsample}", class="cc-github", target="_blank") code  
-
                     if val.stack 
                         +taglist(val.stack)
                     
@@ -65,6 +64,7 @@ html(lang="en")
         link(rel="stylesheet", href="css/main"+ addMin +".css")
 
     body 
+        div test #{data.subrosa}
 
         .content
             h1
@@ -93,54 +93,6 @@ html(lang="en")
 
                 +imglist(subrosaProjects, "subrosa")
 
-                ul.imageList
-                    li
-                        figure.all-subrosa.s-brvtvs
-                        h3 BRVTVS Store Front
-                        a(href="http://brvtvs.com", target="_blank", class="cc-eye") Visit
-                    li
-                        figure.all-subrosa.s-subrosa
-                        h3 Sub Rosa
-                    li
-                        figure.all-subrosa.s-defiance
-                        h3 SyFy Defiance Need Want Bar for TED 2013
-                        a(href="defiance.html",  class="cc-pictures") Detail
-                        
-                    li
-                        figure.all-subrosa.s-nike
-                        h3 Nike Flyknit Collective
-                    li
-                        figure.all-subrosa.s-foc
-                        h3 Fashion Outlet of Chicago
-                        //- a(href="",  class="cc-pictures") Detail
-                    li
-                        figure.all-subrosa.s-fcukfragrance
-                        h3 FCUK Fragrance 
-                    li
-                        figure.all-subrosa.s-friction
-                        h3 FCUK Friction
-                    li
-                        figure.all-subrosa.s-rachelzoe
-                        h3 Neiman Marcus Rachel Zoe Facebook App
-                        a(href="zoe.html",  class="cc-pictures") Detail
-                    li
-                        figure.all-subrosa.s-gotube
-                        h3 Target GoTube for 2012 London Olympics
-                    li
-                        figure.all-subrosa.s-gegarage
-                        h3 GE Garages Event Board
-                    li
-                        figure.all-subrosa.s-mamo
-                        h3 GE By Woman for Woman
-                        a(href="mamo.html",  class="cc-pictures") Detail
-                    li
-                        figure.all-subrosa.s-kss
-                        h3 Kate Spade Saturday
-                    li
-                        figure.all-subrosa.s-bike
-                        h3 Levi Bikeshop x Urbanoutfitters
-                    
-                +taglist(subrosaStack)
 
         article.dailybeast
             header: .content 
