@@ -23,11 +23,6 @@
     "type": "git",
     "url": "git+https://github.com/jyuya/portfolio.git"
   },
-  "keywords": [
-    "carousel",
-    "jquery",
-    "plugin"
-  ],
   "author": "Julia Yu",
   "license": "ISC",
   "bugs": {
@@ -35,9 +30,11 @@
   },
   "homepage": "http://yujulia.com",
   "devDependencies": {
+    "autoprefixer-core": "^5.1.11",
     "browser-sync": "^2.7.1",
     "browserify": "^10.1.0",
     "browserify-shim": "^3.8.6",
+    "csswring": "^3.0.5",
     "dateformat": "^1.0.11",
     "gulp": "^3.8.11",
     "gulp-changed": "^1.2.1",
@@ -48,7 +45,7 @@
     "gulp-jade": "^1.0.0",
     "gulp-jshint": "^1.10.0",
     "gulp-load-utils": "0.0.4",
-    "gulp-minify-css": "^1.1.1",
+    "gulp-postcss": "^5.1.8",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^1.3.3",
     "gulp-size": "^1.2.1",

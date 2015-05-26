@@ -7,50 +7,49 @@
 -var razorfishStack = ["Javascript", "HTML", "CSS", "ASP", "Teamsite", "IW-Perl"]
 -var bay9Stack = ["HTML", "CSS", "Perl", "CGI", "mySQL"]
 
-// ------------------ projects 
-
--var pbrvtvs = { id: "brvtvs", name: "BRVTVS Store Front", link: "http://brvtvs.com", stack: ["HTML","Javascript", "jQuery", "CSS", "Big Cartel", "responsive"] } 
--var psubrosa = { id: "subrosa",  name: "Sub Rosa",  link: "http://subrosa.com",  stack: ["HTML","Javascript", "jQuery", "jQuery UI", "SASS", "HAML", "Ruby on Rails"], gitsample: "https://github.com/yujulia/sample/tree/master/panzoom" }
--var pdefiance = { id: "defiance",  name: "SyFy Defiance Need Want Bar for TED 2013",  detail: "defiance",  stack: ["HTML","Javascript", "jQuery", "Transit", "SASS"], gitsample: "https://github.com/yujulia/sample/tree/master/flip" }
--var pnike = { id: "nike",  name: "Nike Flyknit Collective",  stack: ["HTML","Javascript", "SASS", "Ruby on Rails"] }
--var pfoc = { id: "foc",  name: "Fashion Outlet of Chicago",  stack: ["HTML","Javascript", "jQuery", "Transit", "SASS"], gitsample: "https://github.com/yujulia/sample/blob/master/terminal-js/base.js" }
--var pfcuk = { id: "fcukfragrance",  name: "FCUK Fragrance",  stack: ["HTML", "Javascript", "jQuery", "PHP", "ecommerce"] }
--var pfriction = { id: "friction", name: "FCUK Friction",  stack: ["HTML", "Javascript", "jQuery", "PHP", "Parallax"] }
--var pzoe = { id: "rachelzoe", name: "Neiman Marcus Rachel Zoe Facebook App", detail: "zoe", stack: ["HTML", "Javascript", "jQuery", "jQuery UI", "PHP", "Facebook App", "Drag n Drop", "Canvas"], gitsample: "https://github.com/yujulia/sample/tree/master/dragresize"}
--var pgotube = { id: "gotube", name: "Target GoTube for 2012 London Olympics", stack: ["HTML", "SASS"] }
--var pgarage = { id: "gegarage", name: "GE Garages Event Board", stack: ["HTML", "SASS"] }
--var pmamo = { id: "mamo", name: "GE For Woman By Woman", stack: ["HTML", "SASS", "Javascript", "Node", "Express", "Socket.io"]  }
--var pkss = { id: "kss", name: "Kate Spade Saturday", stack: ["HTML", "SASS", "Javascript", "responsive"] }
--var pbike = { id: "bike", name: "Levi Bikeshop x Urbanoutfitters", stack: ["HTML", "CSS", "Facebook App"] }
-
-// ------------------ work places
-
--var subrosaProjects = [pbrvtvs, psubrosa, pdefiance, pnike, pfoc, pfcuk, pfriction, pzoe, pgotube, pgarage, pmamo, pkss, pbike]
-
-// ------------------ mixins
-
-mixin taglist(stack)
-    ul.tags 
+mixin taglist(stack, company)
+    ul(class="tags tags--#{company}")
         each val in stack
-            li=val
+            li(class="tags__item tags__item--#{company}")=val
 
 mixin imglist(projects, company)
     ul.imageList
-        each val in projects 
-            if val 
-                li 
-                    figure(class="all-#{company} s-#{val.id}")
-                    h3 #{val.name}
-                    if val.link
-                        a(href="#{val.link}", target="_blank", class="cc-eye") visit 
-                    if val.detail
-                        a(href="#{val.detail}.html", class="cc-pictures", target="_blank") detail 
-                    if val.gitsample 
-                        a(href="#{val.gitsample}", class="cc-github", target="_blank") code  
-                    if val.stack 
-                        +taglist(val.stack)
-                    
+        each val in projects         
+            li.imageList__item
+                figure(class="imageList__figure all-#{company} s-#{val.id}")
+  
+                h3.imageList__title 
+                    span #{val.name} 
 
+                    if val.link
+                        a(href="#{val.link}", target="_blank", class="imageList__more cc-eye", title="visit") Visit 
+                    if val.detail
+                        a(href="#{val.detail}.html", class="imageList__more cc-pictures", target="_blank", title="details") Detail 
+                    if val.gitsample 
+                        a(href="#{val.gitsample}", class="imageList__more cc-github", target="_blank", title="code sample") Code  
+
+                if val.stack 
+                    +taglist(val.stack)
+
+                if val.info 
+                    p.imageList__desc #{val.info}
+
+mixin workHeading(current)
+    header 
+        .content 
+            h2 
+                span #{current.name} 
+                if current.link
+                    a(href="#{current.link}", target="_blank", class="cc-eye", title="visit") Visit 
+                if current.detail
+                    a(href="#{current.detail}.html", class="cc-pictures", target="_blank", title="details") Detail 
+
+            p.title #{current.title}, #{current.time}
+            p.desc #{current.desc}
+
+            if current.stack 
+                +taglist(current.stack, current.id)
+               
 
 doctype html
 html(lang="en")
@@ -64,43 +63,23 @@ html(lang="en")
         link(rel="stylesheet", href="css/main"+ addMin +".css")
 
     body 
-        div test #{data.subrosa}
-
         .content
             h1
                 |Portfolio
                 span: a(href=".", class="deemphasize") Julia Yu
 
         article.tugboat
-            .content
-                header
-                    h2: a(href="http://tugboat.co", target="_blank"): span Tugboat 
-                    p.title: span Front End Engineer, May 2013 &ndash; now
-
-                div
-                    //- a(href="",  class="cc-pictures") Detail &nbsp; 
-                    a(href="http://tugboat.co",  class="cc-eye", target="_blank"): span Visit
-
-                +taglist(tugboatStack)
+            +workHeading(data.tugboat)
                     
-
         article.subrosa
-            header: .content 
-                h2: a(href="http://www.wearesubrosa.com/", target="_blank") Sub Rosa
-                p.title Lead Developer, June 2011 &ndash; May 2013
+            +workHeading(data.subrosa)
 
             .content
-
-                +imglist(subrosaProjects, "subrosa")
+                +imglist(data.subrosa.projects, "subrosa")
 
 
         article.dailybeast
-            header: .content 
-                h2: a(href="http://www.thedailybeast.com/", target="_blank") The Daily Beast / Newsweek
-                p.title Senior Developer, June 2010 &ndash; June 2011
-
-            .content
-                +taglist(dailybeastStack)
+            +workHeading(data.dailybeast)
          
             ul.duoList
                 li
@@ -112,49 +91,16 @@ html(lang="en")
                     figure: img(src="img/thedish.png" alt="andrew sullivan the dish logo" width="480" height="220")
 
         article.schematic
-            header: .content 
-                h2 Schematic
-                p.title Senior Software Developer, August 2006 &ndash; July 2010
+            +workHeading(data.schematic)
 
             .content
-                ul.imageList
-                    li
-                        figure.s-schematic.s-bible
-                        h3 Library of Congress Gutenberg Bible
-                    li
-                        figure.s-schematic.s-bbc
-                        h3 BBC Olympics iPhone Demo
-                    li
-                        figure.s-schematic.s-sesame
-                        h3 Sesame Workshop
-                    li
-                        figure.s-schematic.s-clues
-                        h3 Scholastics 39Clues
-                    li
-                        figure.s-schematic.s-hsn
-                        h3 HSN Silverlight Player
-                    li
-                        figure.s-schematic.s-vevo
-                        h3 Vevo
-                    
-
-                +taglist(schematicStack)
+                +imglist(data.schematic.projects, "schematic")
                     
         article.razorfish
-            header: .content 
-                h2: a(href="http://www.razorfish.com/", target="_blank") Razorfish
-                p.title Presentation Layer Developer, February 2005 &ndash; August 2006
-
-            .content
-                +taglist(razorfishStack)
+            +workHeading(data.razorfish)
         
         article.bay9
-            header: .content 
-                h2 Bay9
-                p.title Web Developer, June 2002 &ndash; December 2004
-
-            .content
-                +taglist(bay9Stack)
+            +workHeading(data.bay9)
 
         
 

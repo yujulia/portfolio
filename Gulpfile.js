@@ -1,25 +1,3 @@
-/** -------------------------------------------------------- consts
-*/
-const SASS_SRC = "./src/sass/";
-const CSS_SRC = "./src/css/";
-const CSS_BUILD = "./build/css/";
-const CSS_DEPLOY = "./deploy/css/";
-
-const JS_SRC = "./src/js/";
-const JS_BUILD = "./build/js/";
-const JS_DEPLOY = "./deploy/js/";
-
-const IMG_SRC = "./src/img/";
-const IMG_BUILD = "./build/img/";
-const IMG_DEPLOY = "./deploy/img/";
-
-const FONT_BUILD = "./build/fonts/";
-const FONT_DEPLOY = "./deploy/fonts/";
-
-const JADE_SRC = "./src/markup/";
-const HTML_BUILD = "./build/";
-const HTML_DEPLOY = "./deploy/";
-
 /** -------------------------------------------------------- requires
 */
 var gulp = require("gulp"),
@@ -31,7 +9,9 @@ var gulp = require("gulp"),
     sass = require("gulp-sass"),
     concat = require("gulp-concat"),
     changed = require("gulp-changed"),
-    minifyCSS = require("gulp-minify-css"),
+    postcss = require("gulp-postcss"),
+    autoprefixer = require("autoprefixer-core"),
+    csswring = require("csswring"),
     zip = require("gulp-zip"),
     rename = require("gulp-rename"),
     imagemin = require("gulp-imagemin"),
@@ -39,7 +19,12 @@ var gulp = require("gulp"),
     symlink = require("gulp-sym"),
     uglify = require("gulp-uglify"),
     jshint = require("gulp-jshint"),
-    data = require("./data/projects.json");
+    data = require("./data/projects.json"),
+    gconfig = require("./data/gulp-config.json");
+
+    gconfig =JSON.parse(JSON.stringify(gconfig));
+
+
 
 // -------------------------------------------------------- tasks
 /**  
@@ -47,11 +32,14 @@ var gulp = require("gulp"),
     compile into css, put it in build, concat, add main file, minify, put in deploy
 **/
 gulp.task("styles", function(){
-    return gulp.src(['node_modules/normalize.css/normalize.css', SASS_SRC+"*.scss"])
+    var processors = [ autoprefixer({browsers: ['last 1 version']}) ];
+
+    return gulp.src(['node_modules/normalize.css/normalize.css', gconfig.SASS_SRC+"*.scss"])
         .pipe(sass({ errLogToConsole: true }))
-        .pipe(gulp.dest(CSS_SRC))
+        .pipe(gulp.dest(gconfig.CSS_SRC))
         .pipe(concat("main.css"))
-        .pipe(gulp.dest(CSS_BUILD))
+        .pipe(postcss(processors))
+        .pipe(gulp.dest(gconfig.CSS_BUILD))
         .pipe(reload({ stream: true }));
 });
 
@@ -59,7 +47,7 @@ gulp.task("styles", function(){
     lint
 **/
 gulp.task("lint", function(){
-    return gulp.src(JS_SRC+"*.js")
+    return gulp.src(gconfig.JS_SRC+"*.js")
         .pipe(jshint())
         .pipe(jshint.reporter("default"));
 });
@@ -69,10 +57,10 @@ gulp.task("lint", function(){
     browserify base, put it in build, put minified in deploy
 **/
 gulp.task("scripts", function(){
-    return browserify(JS_SRC + "base.js")
+    return browserify(gconfig.JS_SRC + "base.js")
         .bundle()
         .pipe(source("base.js"))
-        .pipe(gulp.dest(JS_BUILD));
+        .pipe(gulp.dest(gconfig.JS_BUILD));
 });
 
 /** ----------------------------- 
@@ -83,12 +71,12 @@ gulp.task("build-jade", function(){
 
     var jdata = JSON.parse(JSON.stringify(data));
 
-    return gulp.src(JADE_SRC+"*.jade")
+    return gulp.src(gconfig.JADE_SRC+"*.jade")
         .pipe(jade({ 
             locals: { "dev" : true, "data" : jdata, "timestamp":  gutil.date('mmm d, yyyy h:MM:ss TT Z') },
             pretty: true
         }))
-        .pipe(gulp.dest(HTML_BUILD));
+        .pipe(gulp.dest(gconfig.HTML_BUILD));
 });
 
 // -------------------------------------------------------- init project 
@@ -97,8 +85,8 @@ gulp.task("build-jade", function(){
     static assets in deploy
 **/
 gulp.task("link-assets", function(){
-    return gulp.src([IMG_DEPLOY, FONT_DEPLOY])
-        .pipe(symlink([IMG_BUILD, FONT_BUILD], {force: true}));
+    return gulp.src([gconfig.IMG_DEPLOY, gconfig.FONT_DEPLOY])
+        .pipe(symlink([gconfig.IMG_BUILD, gconfig.FONT_BUILD], {force: true}));
 });
 
 gulp.task("init", ["link-assets"]); // use once
@@ -109,9 +97,9 @@ gulp.task("init", ["link-assets"]); // use once
     image processing
 **/
 gulp.task("images", function(){
-    return gulp.src(IMG_SRC+"**")
+    return gulp.src(gconfig.IMG_SRC+"**")
         .pipe(imagemin())
-        .pipe(gulp.dest(IMG_BUILD));
+        .pipe(gulp.dest(gconfig.IMG_BUILD));
 });
 
 /**  
@@ -119,10 +107,10 @@ gulp.task("images", function(){
     minified site use js
 **/
 gulp.task("min-scripts", function(){
-    return gulp.src(JS_BUILD + "base.js")
+    return gulp.src(gconfig.JS_BUILD + "base.js")
         .pipe(uglify({ preserveComments: "some"}))
         .pipe(rename({ extname: ".min.js"}))
-        .pipe(gulp.dest(JS_DEPLOY));
+        .pipe(gulp.dest(gconfig.JS_DEPLOY));
 });
 
 /**  
@@ -130,10 +118,12 @@ gulp.task("min-scripts", function(){
     minified site use js
 **/
 gulp.task("min-styles", function(){
-    return gulp.src(CSS_BUILD+"main.css")
-        .pipe(minifyCSS())
+    var processors = [ csswring ];
+
+    return gulp.src(gconfig.CSS_BUILD+"main.css")
+        .pipe(postcss(processors))
         .pipe(rename({ extname: ".min.css"}))
-        .pipe(gulp.dest(CSS_DEPLOY));
+        .pipe(gulp.dest(gconfig.CSS_DEPLOY));
 });
 
 /**  
@@ -141,12 +131,12 @@ gulp.task("min-styles", function(){
     generate HTML from JADE templates for deploy
 **/
 gulp.task("pub-jade", function(){
-    return gulp.src(JADE_SRC+"*.jade")
+    return gulp.src(gconfig.JADE_SRC+"*.jade")
         .pipe(jade({ 
             locals: { "dev": false, "timestamp":  gutil.date('mmm d, yyyy h:MM:ss TT Z') },
             pretty: true
         }))
-        .pipe(gulp.dest(HTML_DEPLOY));
+        .pipe(gulp.dest(gconfig.HTML_DEPLOY));
 });
 
 /** ----------------------------- 
@@ -175,9 +165,9 @@ gulp.task("serve", ["styles", "build-jade", "scripts"], function(){
         server: "./build"
     });
 
-    gulp.watch(SASS_SRC + "/**/*", ["styles"]);
-    gulp.watch(JS_SRC + "*.js", ["lint", "script-watch"]);
-    gulp.watch(JADE_SRC + "*.jade", ["build-jade"]);
+    gulp.watch(gconfig.SASS_SRC + "/**/*", ["styles"]);
+    gulp.watch(gconfig.JS_SRC + "*.js", ["lint", "script-watch"]);
+    gulp.watch(gconfig.JADE_SRC + "*.jade", ["build-jade"]);
 
     gulp.watch("build/*.html").on("change", reload);
 });

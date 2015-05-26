@@ -1,12 +1,12 @@
-ol, ul, button, figure, h3, section, article, nav, footer, .content, .tags, .imageList, .duoList, .duoList li {
+ol, ul, figure, .imageList__title, section, article, nav, footer, .content, .duoList, .duoList li, .tags {
   zoom: 1; }
-  ol:before, ul:before, button:before, figure:before, h3:before, section:before, article:before, nav:before, footer:before, .content:before, .tags:before, .imageList:before, .duoList:before, .duoList li:before, ol:after, ul:after, button:after, figure:after, h3:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after, .duoList li:after {
+  ol:before, ul:before, figure:before, .imageList__title:before, section:before, article:before, nav:before, footer:before, .content:before, .duoList:before, .duoList li:before, .tags:before, ol:after, ul:after, figure:after, .imageList__title:after, section:after, article:after, nav:after, footer:after, .content:after, .duoList:after, .duoList li:after, .tags:after {
     content: "";
     display: table; }
-  ol:after, ul:after, button:after, figure:after, h3:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after, .duoList li:after {
+  ol:after, ul:after, figure:after, .imageList__title:after, section:after, article:after, nav:after, footer:after, .content:after, .duoList:after, .duoList li:after, .tags:after {
     clear: both; }
 
-ol, ul, button, figure, h3 {
+ol, ul, figure, .imageList__title {
   margin: 0;
   padding: 0; }
 
@@ -22,15 +22,15 @@ ol, ul, button, figure, h3 {
   -moz-osx-font-smoothing: grayscale;
   vertical-align: middle; }
 
-ol, ul, button, figure, h3, section, article, nav, footer, .content, .tags, .imageList, .duoList, .duoList li {
+ol, ul, figure, .imageList__title, section, article, nav, footer, .content, .duoList, .duoList li, .tags {
   zoom: 1; }
-  ol:before, ul:before, button:before, figure:before, h3:before, section:before, article:before, nav:before, footer:before, .content:before, .tags:before, .imageList:before, .duoList:before, .duoList li:before, ol:after, ul:after, button:after, figure:after, h3:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after, .duoList li:after {
+  ol:before, ul:before, figure:before, .imageList__title:before, section:before, article:before, nav:before, footer:before, .content:before, .duoList:before, .duoList li:before, .tags:before, ol:after, ul:after, figure:after, .imageList__title:after, section:after, article:after, nav:after, footer:after, .content:after, .duoList:after, .duoList li:after, .tags:after {
     content: "";
     display: table; }
-  ol:after, ul:after, button:after, figure:after, h3:after, section:after, article:after, nav:after, footer:after, .content:after, .tags:after, .imageList:after, .duoList:after, .duoList li:after {
+  ol:after, ul:after, figure:after, .imageList__title:after, section:after, article:after, nav:after, footer:after, .content:after, .duoList:after, .duoList li:after, .tags:after {
     clear: both; }
 
-ol, ul, button, figure, h3 {
+ol, ul, figure, .imageList__title {
   margin: 0;
   padding: 0; }
 
@@ -228,10 +228,6 @@ html {
 ol, ul {
   list-style: none; }
 
-button {
-  background: none;
-  border: none; }
-
 figure img {
   width: 100%; }
 
@@ -283,18 +279,6 @@ h2, .intro {
   font-size: 30px;
   margin: 0; }
 
-h3 {
-  font-family: raleway, verdana, sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.3em;
-  padding: 10px 0 10px 0;
-  width: 300px;
-  height: 60px;
-  color: #000;
-  display: table-cell;
-  vertical-align: middle; }
-
 p {
   font-size: 15px;
   line-height: 1.6em; }
@@ -307,24 +291,12 @@ article {
   article header {
     padding: 80px 0 40px; }
 
-article.tugboat .title, article.dailybeast .title, article.tugboat h3, article.dailybeast h3 {
-  color: #efefef; }
-article.tugboat .tags li, article.dailybeast .tags li {
-  background-color: #404040;
-  color: #ccc; }
-
 article.tugboat {
   padding-bottom: 0px;
   background: #000 url(../img/tugboat.jpg) no-repeat right center;
   min-height: 389px; }
   article.tugboat h2, article.tugboat .intro, article.tugboat h2 a, article.tugboat .intro a, article.tugboat h3, article.tugboat a {
     color: #029fb5; }
-  article.tugboat .tags {
-    margin: 50px 0 0 0;
-    max-width: 300px; }
-    article.tugboat .tags li {
-      background-color: #029fb5;
-      color: #fff; }
   article.tugboat h2 span, article.tugboat .intro span, article.tugboat p span, article.tugboat a span {
     background: black;
     background: rgba(0, 0, 0, 0.7);
@@ -343,9 +315,6 @@ article.dailybeast {
     color: #e81b41; }
   article.dailybeast h3 {
     display: block; }
-  article.dailybeast .tags li {
-    background-color: #e81b41;
-    color: #fff; }
   article.dailybeast h3 {
     background-color: #000;
     width: 100%; }
@@ -359,9 +328,6 @@ article.razorfish {
   background: #adbd29; }
   article.razorfish h2, article.razorfish .intro, article.razorfish h2 a, article.razorfish .intro a, article.razorfish .title {
     color: #fff; }
-  article.razorfish .tags li {
-    background-color: #fff;
-    color: #adbd29; }
 
 nav li {
   display: inline-block;
@@ -378,8 +344,6 @@ footer {
   padding: 40px 10px; }
 
 pre {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
   border-radius: 10px;
   padding: 20px;
   background-color: #f7f7f7; }
@@ -397,35 +361,6 @@ pre {
 .title {
   margin: 10px 0 0 0;
   font-size: 16px; }
-
-.tags {
-  width: 100%;
-  max-width: 400px; }
-  .tags li {
-    display: block;
-    font-size: 12px;
-    background: #666;
-    color: #fff;
-    padding: 2px 5px;
-    margin: 0 3px 3px 0;
-    float: left; }
-
-.imageList {
-  margin: 40px 0 0 0;
-  width: 100%; }
-  .imageList > li {
-    display: block;
-    overflow: hidden;
-    float: left;
-    min-height: 330px;
-    margin-right: 13px; }
-    .imageList > li figure {
-      width: 300px;
-      height: 200px; }
-    .imageList > li a:before {
-      padding-left: 1px;
-      font-size: 18px;
-      vertical-align: middle; }
 
 .duoList {
   margin: 40px 0 0 0;
@@ -458,13 +393,13 @@ pre {
   background: #f3f3f3;
   padding-top: 80px; }
 
-a.back {
+.back {
   font-size: 20px;
   margin-top: 40px;
   display: inline-block;
   font-family: code, verdana, sans-serif; }
 
-a.back:before {
+.back:before {
   font-size: 20px; }
 
 section.demo {
@@ -475,27 +410,75 @@ section.demo {
     color: #fff;
     margin-bottom: 60px; }
 
+.tags {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  min-height: 45px; }
+  .tags--tugboat {
+    margin: 20px 0; }
+  .tags__item {
+    font-size: 12px;
+    display: block;
+    float: left;
+    background-color: #666;
+    text-align: center;
+    color: #fff;
+    padding: 2px 5px;
+    margin: 0 5px 5px 0; }
+    .tags__item--tugboat {
+      background-color: #029fb5;
+      color: #fff; }
+
+.imageList {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline; }
+  .imageList__item {
+    padding-bottom: 40px;
+    flex-grow: 1; }
+  .imageList__title {
+    max-width: 300px;
+    min-height: 55px;
+    margin: 20px auto 0;
+    font-weight: 300;
+    font-family: raleway, verdana, sans-serif;
+    font-size: 18px;
+    line-height: 1.4em; }
+  .imageList__more {
+    display: inline;
+    padding-right: 5px;
+    font-size: 0px;
+    font-family: PT, verdana, sans-serif; }
+    .imageList__more:before {
+      padding: 0 2px 0 1px;
+      font-size: 16px;
+      line-height: 1.5em;
+      vertical-align: top; }
+  .imageList__figure {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto; }
+  .imageList__desc {
+    max-width: 300px;
+    margin-bottom: 40px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: 300; }
+
 @media screen and (max-width: 980px) {
   .content {
     width: 100%; }
   article.tugboat {
-    background-position: 300px center; }
-  .imageList li {
-    margin-right: 40px; } }
+    background-position: 300px center; } }
 
 @media screen and (max-width: 600px) {
-  nav li {
-    display: block;
-    margin-bottom: 10px; }
   article.tugboat {
     background-position: 100px center; }
     article.tugboat .content {
       padding: 0; }
       article.tugboat .content h2 span, article.tugboat .content .intro span, article.tugboat .content a span, article.tugboat .content p span {
         padding: 10px; }
-  .imageList li {
-    float: none;
-    margin: 0; }
   .duoList li {
     float: none;
     width: 100%;

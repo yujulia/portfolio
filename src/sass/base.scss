@@ -17,11 +17,6 @@ ol, ul {
     list-style: none;
 }
 
-button {
-    @extend %nofrill;
-    background: none;
-    border: none;
-}
 figure {
     @extend %nofrill;
     img {
@@ -95,19 +90,7 @@ h2 {
     margin: 0;
 }
 
-h3 {
-    @extend %nofrill;
-    font-family: $font-title;
-    font-weight: $bold;
-    font-size: 16px;
-    line-height: 1.3em;
-    padding: 10px 0 10px 0;
-    width: 300px;
-    height: 60px;
-    color: #000;
-    display: table-cell;
-    vertical-align: middle;
-}
+
 
 p {
     font-size: 15px;
@@ -130,15 +113,15 @@ article {
 
 
 %onBlack {
-    .title, h3 {
-        color: #efefef;
-    }
-    .tags {
-        li {
-            background-color: #404040;
-            color: #ccc;
-        }
-    }
+    // .title, h3 {
+    //     color: #efefef;
+    // }
+    // .tags {
+    //     li {
+    //         background-color: #404040;
+    //         color: #ccc;
+    //     }
+    // }
 }
 
 article.tugboat  {
@@ -151,14 +134,6 @@ article.tugboat  {
         color: $color-tugboat;
     }
 
-    .tags {
-        margin: 50px 0 0 0;
-        max-width: 300px;
-        li {
-            background-color: $color-tugboat;
-            color: #fff;
-        }
-    }
 
     h2, p, a {
         span {
@@ -190,12 +165,12 @@ article.dailybeast {
     h3 {
         display: block;
     }
-    .tags {
-        li {
-            background-color: $color-beast;
-            color: #fff;
-        }
-    }
+    // .tags {
+    //     li {
+    //         background-color: $color-beast;
+    //         color: #fff;
+    //     }
+    // }
 
     h3 {
         background-color: #000;
@@ -216,10 +191,10 @@ article.razorfish {
     h2, h2 a, .title {
         color: #fff;
     }
-    .tags li {
-        background-color: #fff;
-        color: $color-razorfish;
-    }
+    // .tags li {
+    //     background-color: #fff;
+    //     color: $color-razorfish;
+    // }
 }
 
 
@@ -274,51 +249,7 @@ pre {
     font-size: 16px;
 }
 
-.tags {
-    @extend %clearfix;
-    width: 100%;
-    max-width: 400px;
 
-    li {
-        display: block;
-        font-size: 12px;
-        background: #666;
-        color: #fff;
-        padding: 2px 5px;
-        margin: 0 3px 3px 0;
-        float: left;
-    }
-}
-
-
-
-.imageList {
-    @extend %clearfix;
-    margin: 40px 0 0 0;
-    width: 100%;
-
-    > li {
-        @extend .nofrill;
-        display: block;
-        overflow: hidden;
-        float: left;
-        min-height: 330px;
-        margin-right: 13px;
-
-        figure {
-            width: 300px;
-            height: 200px;
-            // border-bottom: solid 13px #000;
-        }
-
-
-        a:before {
-            padding-left: 1px;
-            font-size: 18px;
-            vertical-align: middle;
-        }
-    }
-}
 
 .duoList {
     @extend %clearfix;
@@ -348,6 +279,8 @@ pre {
     }
 }
 
+// ------------------------------- details page
+
 .betweenImage, .screencaps img {
     margin-bottom: 100px;
 }
@@ -357,14 +290,14 @@ pre {
     padding-top: 80px;
 }
 
-a.back {
+.back {
     font-size: 20px;
     margin-top: 40px;
     display: inline-block;
     font-family: $font-cap;
 }
 
-a.back:before {
+.back:before {
     font-size: 20px;
 }
 
@@ -380,6 +313,91 @@ section.demo {
     }
 }
 
+// --------- stack tags
+
+.tags {
+    @extend %clearfix;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    min-height: 45px;
+
+    &--tugboat {
+        margin: 20px 0;
+    }
+
+    &__item {
+        font-size: 12px;
+        display: block;
+        float: left;
+        background-color: #666;
+        text-align: center;
+        color: #fff;
+        padding: 2px 5px;
+        margin: 0 5px 5px 0;
+
+        &--tugboat {
+            background-color: $color-tugboat;
+            color: #fff;
+        }
+    }
+}
+
+// --------- 300 w image list
+
+.imageList {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+
+    &__item {
+        padding-bottom: 40px;
+        flex-grow: 1;
+    }
+
+
+    &__title {
+        @extend %nofrill;
+        max-width: $thumb-width;
+        min-height: 55px;
+        margin: 20px auto 0;
+        font-weight: $light;
+        font-family: $font-title;
+        font-size: 18px;
+        line-height: 1.4em;
+    }
+
+    &__more {
+        display: inline;
+        padding-right: 5px;
+        font-size: 0px;
+        font-family: $font-body;
+
+        &:before {
+            padding: 0 2px 0 1px;
+            font-size: 16px;
+            line-height: 1.5em;
+            vertical-align: top;
+        }
+    }
+
+
+    &__figure {
+        width: $thumb-width;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    &__desc {
+        max-width: $thumb-width;
+        margin-bottom: 40px;
+        margin: 0 auto;
+        font-size: 14px;
+        font-weight: $light;
+    }
+    
+}
+
 // ------------------------------------  ipad and smaller
 @media screen and (max-width: 980px) {
     .content {
@@ -390,20 +408,10 @@ section.demo {
         background-position: 300px center;
     }
 
-    .imageList li  {
-        margin-right: 40px;        
-    }
 }
 
 // ------------------------------------  iphone
 @media screen and (max-width: 600px)  {
-    nav {
-        li {
-            display: block;
-            margin-bottom: 10px;
-        }
-    }
-
     article.tugboat {
 
         background-position: 100px center;
@@ -419,10 +427,6 @@ section.demo {
         }
     }
 
-    .imageList li  {
-        float: none;
-        margin: 0;        
-    }
 
     .duoList {
         li {
