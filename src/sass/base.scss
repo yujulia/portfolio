@@ -63,9 +63,6 @@ a[class^="cc-"]:before {
     font-size: 85%;
 }
 
-figure img {
-    display: block;
-}
 
 h1 {
     margin: 100px 0 40px;
@@ -101,7 +98,7 @@ h2 {
 h3 {
     @extend %nofrill;
     font-family: $font-title;
-    font-weight: $light;
+    font-weight: $bold;
     font-size: 16px;
     line-height: 1.3em;
     padding: 10px 0 10px 0;
@@ -131,9 +128,6 @@ article {
     }
 }
 
-.noshow {
-    display: none;
-}
 
 %onBlack {
     .title, h3 {
@@ -176,6 +170,7 @@ article.tugboat  {
     }
 
 }
+
 article.subrosa {    
     background: $color-bg;
 
