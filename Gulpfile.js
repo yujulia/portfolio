@@ -32,7 +32,7 @@ var gulp = require("gulp"),
     compile into css, put it in build, concat, add main file, minify, put in deploy
 **/
 gulp.task("styles", function(){
-    var processors = [ autoprefixer({browsers: ['last 1 version']}) ];
+    var processors = [ autoprefixer({browsers: ['last 2 version']}) ];
 
     return gulp.src(['node_modules/normalize.css/normalize.css', gconfig.SASS_SRC+"*.scss"])
         .pipe(sass({ errLogToConsole: true }))
@@ -69,7 +69,7 @@ gulp.task("scripts", function(){
 **/
 gulp.task("build-jade", function(){
 
-    var jdata = JSON.parse(JSON.stringify(data));
+    var jdata = data;
 
     return gulp.src(gconfig.JADE_SRC+"*.jade")
         .pipe(jade({ 
@@ -131,9 +131,10 @@ gulp.task("min-styles", function(){
     generate HTML from JADE templates for deploy
 **/
 gulp.task("pub-jade", function(){
+    var jdata = data;
     return gulp.src(gconfig.JADE_SRC+"*.jade")
         .pipe(jade({ 
-            locals: { "dev": false, "timestamp":  gutil.date('mmm d, yyyy h:MM:ss TT Z') },
+            locals: { "dev": false, "data" : jdata, "timestamp":  gutil.date('mmm d, yyyy h:MM:ss TT Z') },
             pretty: true
         }))
         .pipe(gulp.dest(gconfig.HTML_DEPLOY));

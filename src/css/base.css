@@ -1,9 +1,9 @@
-ol, ul, figure, .imageList__title, section, article, nav, footer, .content, .duoList, .duoList li, .tags {
+ol, ul, figure, .imageList__title, .company, .content, .tags {
   zoom: 1; }
-  ol:before, ul:before, figure:before, .imageList__title:before, section:before, article:before, nav:before, footer:before, .content:before, .duoList:before, .duoList li:before, .tags:before, ol:after, ul:after, figure:after, .imageList__title:after, section:after, article:after, nav:after, footer:after, .content:after, .duoList:after, .duoList li:after, .tags:after {
+  ol:before, ul:before, figure:before, .imageList__title:before, .company:before, .content:before, .tags:before, ol:after, ul:after, figure:after, .imageList__title:after, .company:after, .content:after, .tags:after {
     content: "";
     display: table; }
-  ol:after, ul:after, figure:after, .imageList__title:after, section:after, article:after, nav:after, footer:after, .content:after, .duoList:after, .duoList li:after, .tags:after {
+  ol:after, ul:after, figure:after, .imageList__title:after, .company:after, .content:after, .tags:after {
     clear: both; }
 
 ol, ul, figure, .imageList__title {
@@ -22,12 +22,12 @@ ol, ul, figure, .imageList__title {
   -moz-osx-font-smoothing: grayscale;
   vertical-align: middle; }
 
-ol, ul, figure, .imageList__title, section, article, nav, footer, .content, .duoList, .duoList li, .tags {
+ol, ul, figure, .imageList__title, .company, .content, .tags {
   zoom: 1; }
-  ol:before, ul:before, figure:before, .imageList__title:before, section:before, article:before, nav:before, footer:before, .content:before, .duoList:before, .duoList li:before, .tags:before, ol:after, ul:after, figure:after, .imageList__title:after, section:after, article:after, nav:after, footer:after, .content:after, .duoList:after, .duoList li:after, .tags:after {
+  ol:before, ul:before, figure:before, .imageList__title:before, .company:before, .content:before, .tags:before, ol:after, ul:after, figure:after, .imageList__title:after, .company:after, .content:after, .tags:after {
     content: "";
     display: table; }
-  ol:after, ul:after, figure:after, .imageList__title:after, section:after, article:after, nav:after, footer:after, .content:after, .duoList:after, .duoList li:after, .tags:after {
+  ol:after, ul:after, figure:after, .imageList__title:after, .company:after, .content:after, .tags:after {
     clear: both; }
 
 ol, ul, figure, .imageList__title {
@@ -152,7 +152,10 @@ ol, ul, figure, .imageList__title {
 .cc-info:before {
   content: "\e018"; }
 
-.s-schematic {
+.cc-external:before {
+  content: "\e017"; }
+
+.all-schematic {
   background-image: url(../img/sprite-schematic.png);
   background-repeat: no-repeat;
   display: block; }
@@ -252,101 +255,48 @@ a {
 a:hover {
   opacity: 0.7; }
 
-a[class^="cc-"]:before {
-  margin-right: 4px;
-  font-size: 85%; }
+p {
+  font-size: 15px;
+  line-height: 1.6em; }
 
-h1 {
-  margin: 100px 0 40px;
+.pageTitle {
+  margin: 100px 0 100px;
   font-family: code, verdana, sans-serif;
   font-weight: 300;
   color: #999999;
   font-size: 50px;
   line-height: 1.2em; }
-  h1 a {
-    color: inherit; }
-  h1 span {
+  .pageTitle__link {
     display: block;
-    margin-top: -20px; }
-  h1 span, h1 .deemphasize {
+    color: inherit;
     font-size: 20px;
+    line-height: 1em;
     font-family: raleway, verdana, sans-serif; }
 
-h2, .intro {
-  font-family: raleway, verdana, sans-serif;
-  font-weight: 300;
+.company {
+  padding-bottom: 80px; }
+
+.iconLink {
+  padding-right: 5px;
+  font-size: 0px;
+  font-family: PT, verdana, sans-serif; }
+  .iconLink:before {
+    padding: 0 2px 0 1px;
+    font-size: 16px;
+    line-height: 1.5em;
+    vertical-align: top; }
+  .iconLink--lg:before {
+    font-size: 20px;
+    line-height: 1.7em; }
+
+.workheader__title {
+  font: 300 30px raleway, verdana, sans-serif;
   color: #ff9900;
-  font-size: 30px;
+  padding: 80px 0 0 0;
   margin: 0; }
 
-p {
-  font-size: 15px;
-  line-height: 1.6em; }
-
-section {
-  padding: 40px 0 0 0; }
-
-article {
-  padding-bottom: 80px; }
-  article header {
-    padding: 80px 0 40px; }
-
-article.tugboat {
-  padding-bottom: 0px;
-  background: #000 url(../img/tugboat.jpg) no-repeat right center;
-  min-height: 389px; }
-  article.tugboat h2, article.tugboat .intro, article.tugboat h2 a, article.tugboat .intro a, article.tugboat h3, article.tugboat a {
-    color: #029fb5; }
-  article.tugboat h2 span, article.tugboat .intro span, article.tugboat p span, article.tugboat a span {
-    background: black;
-    background: rgba(0, 0, 0, 0.7);
-    display: inline-block;
-    padding: 5px 5px 5px 0; }
-
-article.subrosa {
-  background: #f3f3f3; }
-  article.subrosa h2, article.subrosa .intro, article.subrosa h2 a, article.subrosa .intro a, article.subrosa h3, article.subrosa .imageList li a {
-    color: #2c1a3d; }
-
-article.dailybeast {
-  background: #000;
-  padding-bottom: 0; }
-  article.dailybeast h2, article.dailybeast .intro, article.dailybeast h2 a, article.dailybeast .intro a {
-    color: #e81b41; }
-  article.dailybeast h3 {
-    display: block; }
-  article.dailybeast h3 {
-    background-color: #000;
-    width: 100%; }
-
-article.schematic {
-  background: #f3f3f3; }
-  article.schematic h2, article.schematic .intro, article.schematic h2 a, article.schematic .intro a {
-    color: #029cd8; }
-
-article.razorfish {
-  background: #adbd29; }
-  article.razorfish h2, article.razorfish .intro, article.razorfish h2 a, article.razorfish .intro a, article.razorfish .title {
-    color: #fff; }
-
-nav li {
-  display: inline-block;
-  margin-right: 20px; }
-  nav li a {
-    color: #ff9900; }
-  nav li a:before {
-    font-size: 14px; }
-
-footer {
-  margin-top: 100px;
-  background-color: #404040;
-  color: #ffffff;
-  padding: 40px 10px; }
-
-pre {
-  border-radius: 10px;
-  padding: 20px;
-  background-color: #f7f7f7; }
+.title {
+  margin: 0 0 80px 0; }
 
 .content {
   position: relative;
@@ -354,37 +304,71 @@ pre {
   margin: 0 auto;
   padding: 0 10px; }
 
-.intro {
-  font-size: 20px;
-  line-height: 1.4em; }
+.tugboat {
+  padding-bottom: 0px;
+  background: #000 url(../img/tugboat.jpg) no-repeat right center;
+  min-height: 389px; }
+  .tugboat .content__inner {
+    max-width: 50%; }
+  .tugboat .workheader__title, .tugboat .iconLink {
+    color: #029fb5; }
+  .tugboat .tags__item {
+    background: #029fb5;
+    color: #fff; }
+  .tugboat .title {
+    color: #fcfcfc; }
 
-.title {
-  margin: 10px 0 0 0;
-  font-size: 16px; }
+.subrosa {
+  background: #f3f3f3; }
+  .subrosa .workheader__title, .subrosa .iconLink, .subrosa .imageList__title {
+    color: #2c1a3d; }
+  .subrosa .tags__item {
+    background-color: #2c1a3d; }
 
-.duoList {
-  margin: 40px 0 0 0;
-  width: 100%; }
-  .duoList li {
-    float: right;
-    width: 50%;
-    background-color: #fff; }
-    .duoList li figure {
-      display: block;
-      width: 100%;
-      max-width: 480px;
-      max-height: 220px;
-      background: #fff; }
-  .duoList li:first-child {
-    float: left;
-    background-color: #e81b41; }
-    .duoList li:first-child figure {
-      float: right; }
-    .duoList li:first-child h3 span {
-      width: 100%;
-      max-width: 480px;
-      float: right;
-      padding-left: 10px; }
+.dailybeast {
+  background: #000;
+  padding-bottom: 0; }
+  .dailybeast .workheader {
+    text-align: center; }
+  .dailybeast .workheader__title, .dailybeast .iconLink {
+    color: #e81b41; }
+  .dailybeast .imageList {
+    align-items: stretch; }
+    .dailybeast .imageList > li {
+      background-color: #fff;
+      padding-top: 20px; }
+    .dailybeast .imageList > li:first-child {
+      background-color: #e81b41;
+      color: #fff; }
+      .dailybeast .imageList > li:first-child .tags__item {
+        background-color: #fff;
+        color: #e81b41; }
+
+.schematic {
+  background: #f3f3f3; }
+  .schematic .workheader__title, .schematic .iconLink, .schematic .imageList__title {
+    color: #029cd8; }
+  .schematic .tags__item {
+    background: #029cd8;
+    color: #fff; }
+
+.razorfish {
+  background: #adbd29; }
+  .razorfish .workheader__title, .razorfish .iconLink, .razorfish .title {
+    color: #fff; }
+  .razorfish .tags__item {
+    background: #fff;
+    color: #adbd29; }
+  .razorfish .title {
+    margin-bottom: 20px; }
+
+.bay9 .workheader__title {
+  color: #ff9900; }
+.bay9 .tags__item {
+  background: #ff9900;
+  color: #fff; }
+.bay9 .title {
+  margin-bottom: 20px; }
 
 .betweenImage, .screencaps img {
   margin-bottom: 100px; }
@@ -402,20 +386,19 @@ pre {
 .back:before {
   font-size: 20px; }
 
-section.demo {
+.demo {
   position: relative;
   padding: 80px 0;
   background-color: #ccc; }
-  section.demo h2, section.demo .intro {
+  .demo h2 {
     color: #fff;
     margin-bottom: 60px; }
 
 .tags {
   width: 100%;
   max-width: 300px;
-  margin: 20px auto;
-  min-height: 45px; }
-  .tags--tugboat {
+  margin: 10px auto 0; }
+  .tags--tugboat, .tags--razorfish, .tags--bay9 {
     margin: 20px 0; }
   .tags__item {
     font-size: 12px;
@@ -426,9 +409,6 @@ section.demo {
     color: #fff;
     padding: 2px 5px;
     margin: 0 5px 5px 0; }
-    .tags__item--tugboat {
-      background-color: #029fb5;
-      color: #fff; }
 
 .imageList {
   display: flex;
@@ -437,6 +417,8 @@ section.demo {
   .imageList__item {
     padding-bottom: 40px;
     flex-grow: 1; }
+  .imageList__img {
+    margin: 0 auto; }
   .imageList__title {
     max-width: 300px;
     min-height: 55px;
@@ -455,10 +437,6 @@ section.demo {
       font-size: 16px;
       line-height: 1.5em;
       vertical-align: top; }
-  .imageList__figure {
-    width: 300px;
-    height: 200px;
-    margin: 0 auto; }
   .imageList__desc {
     max-width: 300px;
     margin-bottom: 40px;
@@ -469,24 +447,18 @@ section.demo {
 @media screen and (max-width: 980px) {
   .content {
     width: 100%; }
-  article.tugboat {
-    background-position: 300px center; } }
+  .imageList__img, .imageList__title, .imageList__desc, .imageList .tags {
+    margin-left: 0;
+    margin-right: 0; }
+  .tugboat {
+    background-position: 300px center; }
+    .tugboat .content__inner {
+      max-width: 100%; }
+  .dailybeast .imageList > li {
+    padding: 0 10px; } }
 
 @media screen and (max-width: 600px) {
-  article.tugboat {
+  .tugboat {
     background-position: 100px center; }
-    article.tugboat .content {
-      padding: 0; }
-      article.tugboat .content h2 span, article.tugboat .content .intro span, article.tugboat .content a span, article.tugboat .content p span {
-        padding: 10px; }
-  .duoList li {
-    float: none;
-    width: 100%;
-    margin-bottom: 40px; }
-    .duoList li h3 {
-      padding-left: 10px; }
-    .duoList li figure img {
-      width: 100%;
-      height: auto; }
-  .duoList li:first-child h3 span {
-    padding: 0; } }
+  .dailybeast .imageList > li {
+    padding-bottom: 40px; } }

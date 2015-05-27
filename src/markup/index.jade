@@ -1,55 +1,46 @@
 -var addMin = (dev == true) ? "" : ".min"
 
--var tugboatStack = ["Javascript", "HTML", "SASS", "D3", "jQuery", "Python", "Jinja2", "Typekit"]
--var subrosaStack = ["Javascript", "HTML", "SASS", "jQuery", "HAML", "Jade", "Ruby on Rails", "Node", "Express", "Word Press", "Big Cartel", "PHP", "Git"]
--var dailybeastStack = ["Javascript", "jQuery", "HTML", "CSS", "Ruby on Rails", "SVN"]
--var schematicStack = ["Javascript", "jQuery", "HTML", "CSS", "Objective C", "Silverlight 1.0", "PHP", "JSP", "SVN", "CVS"]
--var razorfishStack = ["Javascript", "HTML", "CSS", "ASP", "Teamsite", "IW-Perl"]
--var bay9Stack = ["HTML", "CSS", "Perl", "CGI", "mySQL"]
 
 mixin taglist(stack, company)
     ul(class="tags tags--#{company}")
         each val in stack
-            li(class="tags__item tags__item--#{company}")=val
+            li(class="tags__item")=val
 
-mixin imglist(projects, company)
-    ul.imageList
+mixin imglist(projects, company, w, h)
+    ul(class="imageList imageList--#{company}")
         each val in projects         
-            li.imageList__item
-                figure(class="imageList__figure all-#{company} s-#{val.id}")
+            li(class="imageList__item")
+                img(src="img/thumb/#{company}/#{val.id}.png", alt="#{val.name} image", width="#{w}", height="#{h}", class="imageList__img")
   
                 h3.imageList__title 
                     span #{val.name} 
 
                     if val.link
-                        a(href="#{val.link}", target="_blank", class="imageList__more cc-eye", title="visit") Visit 
+                        a(href="#{val.link}", target="_blank", class="iconLink cc-external", title="visit") Visit 
                     if val.detail
-                        a(href="#{val.detail}.html", class="imageList__more cc-pictures", target="_blank", title="details") Detail 
+                        a(href="#{val.detail}.html", class="iconLink cc-pictures", target="_blank", title="details") Detail 
                     if val.gitsample 
-                        a(href="#{val.gitsample}", class="imageList__more cc-github", target="_blank", title="code sample") Code  
+                        a(href="#{val.gitsample}", class="iconLink cc-github", target="_blank", title="code sample") Code  
 
                 if val.stack 
-                    +taglist(val.stack)
+                    +taglist(val.stack, company)
 
                 if val.info 
                     p.imageList__desc #{val.info}
 
 mixin workHeading(current)
-    header 
-        .content 
-            h2 
-                span #{current.name} 
-                if current.link
-                    a(href="#{current.link}", target="_blank", class="cc-eye", title="visit") Visit 
-                if current.detail
-                    a(href="#{current.detail}.html", class="cc-pictures", target="_blank", title="details") Detail 
+    header(class="workheader workheader--#{current.id}")
+        .content
+            .content__inner
+                h2(class="workheader__title")
+                    span #{current.name} 
+                   
+                p.title #{current.title}, #{current.time}
 
-            p.title #{current.title}, #{current.time}
-            p.desc #{current.desc}
+                if current.stack 
+                    +taglist(current.stack, current.id)
 
-            if current.stack 
-                +taglist(current.stack, current.id)
-               
+                p.desc #{current.desc}
 
 doctype html
 html(lang="en")
@@ -64,42 +55,36 @@ html(lang="en")
 
     body 
         .content
-            h1
-                |Portfolio
-                span: a(href=".", class="deemphasize") Julia Yu
+            h1.pageTitle
+                span Portfolio
+                a(href=".", class="pageTitle__link") Julia Yu
 
-        article.tugboat
+        article(class="company tugboat")
             +workHeading(data.tugboat)
                     
-        article.subrosa
+        article(class="company subrosa")
             +workHeading(data.subrosa)
 
             .content
-                +imglist(data.subrosa.projects, "subrosa")
+                +imglist(data.subrosa.projects, "subrosa", data.subrosa.imgW, data.subrosa.imgH)
 
 
-        article.dailybeast
+        article(class="company dailybeast")
             +workHeading(data.dailybeast)
-         
-            ul.duoList
-                li
-                    h3: span Newsweek &amp; The Daily Beast
-                    figure: img(src="img/dailybeast.png" alt="newsweek dailybeast logo" width="480" height="220")
-                    
-                li
-                    h3 Andrew Sullivan's The Dish 
-                    figure: img(src="img/thedish.png" alt="andrew sullivan the dish logo" width="480" height="220")
 
-        article.schematic
+            +imglist(data.dailybeast.projects, "dailybeast", data.dailybeast.imgW, data.dailybeast.imgH)
+
+
+        article(class="company schematic")
             +workHeading(data.schematic)
 
             .content
                 +imglist(data.schematic.projects, "schematic")
                     
-        article.razorfish
+        article(class="company razorfish")
             +workHeading(data.razorfish)
         
-        article.bay9
+        article(class="company bay9")
             +workHeading(data.bay9)
 
         

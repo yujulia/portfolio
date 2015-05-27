@@ -43,7 +43,6 @@ body {
     padding-bottom: 100px;
 }
 
-
 a {
     text-decoration: none;
     color: $color-link;
@@ -53,181 +52,65 @@ a:hover {
     opacity: 0.7;
 }
 
-a[class^="cc-"]:before {
-    margin-right: 4px;
-    font-size: 85%;
+p {
+    font-size: 15px;
+    line-height: 1.6em;
 }
 
-
-h1 {
-    margin: 100px 0 40px;
+.pageTitle {
+    margin: 100px 0 100px;
     font-family: $font-cap;
     font-weight: $light;
     color: $color-header;
     font-size: 50px;
     line-height: 1.2em;
 
-    a {
-        color: inherit;
-    }
-
-    span {
+    &__link {
         display: block;
-        margin-top: -20px;
-    }
-
-    span, .deemphasize {
+        color: inherit;
         font-size: 20px;
+        line-height: 1em;
         font-family: $font-title;
     }
+
 }
 
-h2 {
-    font-family: $font-title;
-    font-weight: $light;
-    color: $color-link;
-    font-size: 30px;
-    margin: 0;
-}
-
-
-
-p {
-    font-size: 15px;
-    line-height: 1.6em;
-}
-
-section {
-    @extend %clearfix;
-    padding: 40px 0 0 0;
-}
-
-article {
+.company {
     @extend %clearfix;
     padding-bottom: 80px;
+}
 
-    header {
-        padding: 80px 0 40px;
+.iconLink {
+    padding-right: 5px;
+    font-size: 0px;
+    font-family: $font-body;
+
+    &:before {
+        padding: 0 2px 0 1px;
+        font-size: 16px;
+        line-height: 1.5em;
+        vertical-align: top;
+    }
+
+    &--lg:before {
+        font-size: 20px;
+        line-height: 1.7em;
     }
 }
 
 
-%onBlack {
-    // .title, h3 {
-    //     color: #efefef;
-    // }
-    // .tags {
-    //     li {
-    //         background-color: #404040;
-    //         color: #ccc;
-    //     }
-    // }
-}
-
-article.tugboat  {
-    @extend %onBlack;
-    padding-bottom: 0px;
-    background: #000 url(../img/tugboat.jpg) no-repeat right center;
-    min-height: 389px;
-
-    h2, h2 a, h3, a {
-        color: $color-tugboat;
-    }
-
-
-    h2, p, a {
-        span {
-            background: rgb(0, 0, 0);
-            background: rgba(0, 0, 0, 0.7);
-            display: inline-block;
-            padding: 5px 5px 5px 0;
-        }
-    }
-
-}
-
-article.subrosa {    
-    background: $color-bg;
-
-    h2, h2 a, h3, .imageList li a  {
-        color: $color-subrosa;
+.workheader {
+    &__title {
+        @extend %nofrills;
+        font: $light 30px $font-title;
+        color: $color-link;
+        padding: 80px 0 0 0;
+        margin: 0;
     }
 }
 
-article.dailybeast {
-    @extend %onBlack;
-    background: #000;
-    padding-bottom: 0;
-
-    h2, h2 a {
-        color: $color-beast;
-    }
-    h3 {
-        display: block;
-    }
-    // .tags {
-    //     li {
-    //         background-color: $color-beast;
-    //         color: #fff;
-    //     }
-    // }
-
-    h3 {
-        background-color: #000;
-        width: 100%;
-    }
-}
-
-article.schematic {
-    background: $color-bg;
-    h2, h2 a {
-        color: $color-schematic;
-    }
-}
-
-article.razorfish {
-    background: $color-razorfish;
-
-    h2, h2 a, .title {
-        color: #fff;
-    }
-    // .tags li {
-    //     background-color: #fff;
-    //     color: $color-razorfish;
-    // }
-}
-
-
-
-nav {
-    @extend %clearfix;
-
-    li {
-        display: inline-block;
-        margin-right: 20px;
-
-        a {
-            color: $color-link;
-        }
-
-        a:before {
-            font-size: 14px;
-        }
-    }    
-}
-
-footer {
-    margin-top: 100px;
-    @extend %clearfix;
-    background-color: #404040;
-    color: #ffffff;
-    padding: 40px 10px;
-}
-
-pre {
-    @include round(10px);
-    padding: 20px;
-    background-color: #f7f7f7;
+.title {
+    margin: 0 0 80px 0;
 }
 
 .content {
@@ -238,46 +121,117 @@ pre {
     padding: 0 10px;
 }
 
-.intro {
-    @extend h2;
-    font-size: 20px;
-    line-height: 1.4em;
+.tugboat {
+    padding-bottom: 0px;
+    background: #000 url(../img/tugboat.jpg) no-repeat right center;
+    min-height: 389px;
+
+    .content__inner {
+        max-width: 50%;
+    }
+
+    .workheader__title, .iconLink {
+        color: $color-tugboat;
+    }
+
+    .tags__item {
+        background: $color-tugboat;
+        color: #fff;
+    }
+    
+    .title {
+        color: #fcfcfc;
+    }
 }
 
-.title {
-    margin: 10px 0 0 0;
-    font-size: 16px;
+.subrosa {    
+    background: $color-bg;
+
+    .workheader__title, .iconLink, .imageList__title {
+        color: $color-subrosa;
+    }
+
+    .tags__item {
+        background-color: $color-subrosa;
+    }
+
 }
 
+.dailybeast {
+    background: #000;
+    padding-bottom: 0;
 
+    .workheader {
+        text-align: center;
+    }
 
-.duoList {
-    @extend %clearfix;
-    margin: 40px 0 0 0;
-    width: 100%;
+    .workheader__title, .iconLink {
+        color: $color-beast;
+    }
 
-    li {
-        float: right;
-        width: 50%;
-        @extend %clearfix;
-        background-color: #fff;
+    .imageList {
+        align-items: stretch;
 
-        figure {
-            display: block;
-            width: 100%;
-            max-width: 480px;
-            max-height: 220px;
-            background: #fff;
+        > li {
+            background-color: #fff;
+            padding-top: 20px;
         }
+        > li:first-child {
+            background-color: $color-beast;
+            color: #fff;
 
+            .tags__item {
+                background-color: #fff;
+                color: $color-beast;
+            } 
+        }
+    }   
+}
+
+.schematic {
+    background: $color-bg;
+
+    .workheader__title, .iconLink, .imageList__title {
+        color: $color-schematic;
     }
-    li:first-child {
-        float: left;
-        background-color: $color-beast;
-        figure { float: right; }
-        h3 span { width: 100%; max-width: 480px; float: right; padding-left: 10px; }
+
+    .tags__item {
+        background: $color-schematic;
+        color: #fff;
     }
 }
+
+.razorfish {
+    background: $color-razorfish;
+
+    .workheader__title, .iconLink, .title {
+        color: #fff;
+    }
+
+    .tags__item {
+        background: #fff;
+        color: $color-razorfish;
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+}
+
+.bay9 {
+    .workheader__title {
+        color: $color-bay9;
+    }
+    .tags__item {
+        background: $color-bay9;
+        color: #fff;
+    }
+    .title {
+        margin-bottom: 20px;
+    }
+    
+}
+
 
 // ------------------------------- details page
 
@@ -301,7 +255,7 @@ pre {
     font-size: 20px;
 }
 
-section.demo {
+.demo {
     @extend %clear;
     position: relative;
     padding: 80px 0;
@@ -319,10 +273,9 @@ section.demo {
     @extend %clearfix;
     width: 100%;
     max-width: 300px;
-    margin: 20px auto;
-    min-height: 45px;
+    margin: 10px auto 0;
 
-    &--tugboat {
+    &--tugboat, &--razorfish, &--bay9 {
         margin: 20px 0;
     }
 
@@ -335,15 +288,10 @@ section.demo {
         color: #fff;
         padding: 2px 5px;
         margin: 0 5px 5px 0;
-
-        &--tugboat {
-            background-color: $color-tugboat;
-            color: #fff;
-        }
     }
 }
 
-// --------- 300 w image list
+// --------- image list
 
 .imageList {
     display: flex;
@@ -355,6 +303,9 @@ section.demo {
         flex-grow: 1;
     }
 
+    &__img {
+        margin: 0 auto;
+    }
 
     &__title {
         @extend %nofrill;
@@ -381,13 +332,6 @@ section.demo {
         }
     }
 
-
-    &__figure {
-        width: $thumb-width;
-        height: 200px;
-        margin: 0 auto;
-    }
-
     &__desc {
         max-width: $thumb-width;
         margin-bottom: 40px;
@@ -404,46 +348,34 @@ section.demo {
         width: 100%;
     }
 
-    article.tugboat {
+    .imageList__img, .imageList__title, .imageList__desc, .imageList .tags {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .tugboat {
         background-position: 300px center;
+
+        .content__inner {
+            max-width: 100%;
+        }
+
+    }
+
+    .dailybeast .imageList > li {
+        padding: 0 10px;
     }
 
 }
 
 // ------------------------------------  iphone
 @media screen and (max-width: 600px)  {
-    article.tugboat {
-
+    .tugboat {
         background-position: 100px center;
-
-        .content {
-            padding: 0;
-
-            h2, a, p {
-                span {
-                    padding: 10px;
-                }
-            }
-        }
     }
 
-
-    .duoList {
-        li {
-            float: none;
-            width: 100%;
-            margin-bottom: 40px;
-
-            h3 {
-                padding-left: 10px;
-            }
-
-            figure img {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        li:first-child h3 span { padding: 0; }
+    .dailybeast .imageList > li {
+        padding-bottom: 40px;
     }
+
 }

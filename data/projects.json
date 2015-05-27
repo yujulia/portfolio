@@ -6,17 +6,33 @@
         "link": "http://tugboat.co",
         "name": "Tugboat",
         "id": "tugboat",
-        "desc": "Help content creators find fans, see user metrics, create product offers and subscriptions through a web interface."
+        "desc": "Help content creators find supporters, create product offers and subscriptions through a web interface."
     },
 
     "dailybeast": {
         "title": "Senior Developer",
         "time": "June 2010 - June 2011",
-        "stack": ["Javascript", "jQuery", "HTML", "CSS", "Ruby on Rails", "SVN"],
         "link": "http://thedailybeast.com",
         "name": "The Daily Beast",
         "id": "dailybeast",
-        "desc": "Online news source."
+        "imgW" : "300",
+        "imgH" : "200",
+        "projects" : [
+            {
+                "id": "dailybeast",
+                "name" : "The Daily Beast",
+                "stack" : ["Javascript", "jQuery", "Ruby on Rails", "HTML", "SASS", "HAML", "SVN"],
+                "info" : "Building and AB testing new layouts of the Beast, creating feature interactions using parallax, building CMS tools."
+            },
+            {
+                "width" : "480",
+                "height" : "220",
+                "id": "thedish",
+                "name" : "Andrew Sullivan's The Dish",
+                "stack" : ["HTML", "CSS", "WordPress"],
+                "info" : "Created new WordPress template for Andrew Sullivan's blog."
+            }
+        ]
     },
 
     "razorfish": { 
@@ -25,8 +41,7 @@
         "link": "http://www.razorfish.com",
         "name": "Razorfish",
         "id": "razorfish",
-        "stack": ["Javascript", "HTML", "CSS", "ASP", "Teamsite", "IW-Perl"],
-        "desc": "Full service digital agency."
+        "stack": ["Javascript", "HTML", "CSS", "ASP", "Teamsite", "IW-Perl"]
     },
 
     "bay9": {
@@ -34,8 +49,7 @@
         "time": "June 2002 - December 2004",
         "id": "bay9",
         "name": "Bay9",
-        "stack": ["HTML", "CSS", "Perl", "CGI", "mySQL"],
-        "desc": "Web portal."
+        "stack": ["HTML", "CSS", "Perl", "CGI", "mySQL"]
     },
 
     "schematic": {
@@ -43,7 +57,8 @@
         "time": "August 2006 - July 2010",
         "id": "schematic",
         "name": "Schematic",
-        "desc": "Digital agency.",
+        "imgW" : "300",
+        "imgH" : "200",
         "projects": [
             {
                 "id": "bible",
@@ -55,6 +70,7 @@
                 "id": "bbc",
                 "name": "BBC Olympics iPhone App",
                 "stack": ["Objective C"],
+                "gitsample" : "https://github.com/yujulia/sample/tree/master/olydemo",
                 "info": "Proof of concept built in Objective C."
             },
             {
@@ -73,6 +89,7 @@
                 "id": "hsn",
                 "name": "Home Shopping Network Silverlight Player",
                 "stack": ["Silverlight", "Javascript"],
+                "gitsample" : "https://github.com/yujulia/sample/tree/master/oldcode/silverlight/videoplayer",
                 "info": "Built with version 1.0 Javascript version of Silverlight, a streaming video player with slide out menus."
             },
             {
@@ -90,7 +107,8 @@
         "id": "subrosa",
         "name": "Sub Rosa",
         "link": "http://wearesubrosa.com",
-        "desc": "Experience and digital design agency.",
+        "imgW" : "300",
+        "imgH" : "200",
 
         "projects": [
             { 
@@ -165,6 +183,7 @@
                 "id": "mamo", 
                 "name": "GE For Woman By Woman", 
                 "stack": ["HTML", "SASS", "Javascript", "Node", "Express", "Socket.io"],
+                "gitsample" : "https://github.com/yujulia/sample/tree/master/node",
                 "info": "Using an iPad to control the video, music, and images shown on LCD displays/Wall Projections, this application used the Node/Socket.io to broadcast and receive messages."
             },
             { 
