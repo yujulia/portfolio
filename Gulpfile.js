@@ -1,7 +1,8 @@
 /** -------------------------------------------------------- requires
 */
 var gulp = require("gulp"),
-    gutil = require('gulp-load-utils')(['date']),
+    gutilDate = require('gulp-load-utils')(['date']),
+    gutil = require("gulp-util"),
     browserSync = require("browser-sync").create(),
     reload = browserSync.reload,
     browserify = require("browserify"),
@@ -19,12 +20,10 @@ var gulp = require("gulp"),
     symlink = require("gulp-sym"),
     uglify = require("gulp-uglify"),
     jshint = require("gulp-jshint"),
+    ftp = require( 'vinyl-ftp' ),
     data = require("./data/projects.json"),
+    secret = require("./data/secret.json")
     gconfig = require("./data/gulp-config.json");
-
-    gconfig =JSON.parse(JSON.stringify(gconfig));
-
-
 
 // -------------------------------------------------------- tasks
 /**  
@@ -73,7 +72,7 @@ gulp.task("build-jade", function(){
 
     return gulp.src(gconfig.JADE_SRC+"*.jade")
         .pipe(jade({ 
-            locals: { "dev" : true, "data" : jdata, "timestamp":  gutil.date('mmm d, yyyy h:MM:ss TT Z') },
+            locals: { "dev" : true, "data" : jdata, "timestamp":  gutilDate.date('mmm d, yyyy h:MM:ss TT Z') },
             pretty: true
         }))
         .pipe(gulp.dest(gconfig.HTML_BUILD));
@@ -134,7 +133,7 @@ gulp.task("pub-jade", function(){
     var jdata = data;
     return gulp.src(gconfig.JADE_SRC+"*.jade")
         .pipe(jade({ 
-            locals: { "dev": false, "data" : jdata, "timestamp":  gutil.date('mmm d, yyyy h:MM:ss TT Z') },
+            locals: { "dev": false, "data" : jdata, "timestamp":  gutilDate.date('mmm d, yyyy h:MM:ss TT Z') },
             pretty: true
         }))
         .pipe(gulp.dest(gconfig.HTML_DEPLOY));
@@ -145,6 +144,37 @@ gulp.task("pub-jade", function(){
     generate deploy version of site "gulp deploy"
 **/
 gulp.task("deploy", ["images", "min-scripts", "min-styles", "pub-jade"]);
+
+/** ----------------------------- 
+    upload 
+    upload the deploy folder
+**/
+gulp.task("upload", function(){
+
+    var conn = ftp.create( {
+        host:     secret.host,
+        user:     secret.user,
+        password: secret.password,
+        parallel: 10,
+        log: gutil.log
+    } );
+
+    var globs = [
+        './deploy/*.html',
+        './deploy/css/**',
+        './deploy/fonts/**',
+        './deploy/img/**',
+        './deploy/js/**'
+    ];
+
+    // using base = '.' will transfer everything to /public_html correctly
+    // turn off buffering in gulp.src for best performance
+
+    return gulp.src( globs, { base: './deploy/', buffer: false } )
+        .pipe( conn.newer( '/yujulia.com/work' ) ) // only upload newer files
+        .pipe( conn.dest( '/yujulia.com/work' ) );
+
+});
 
 
 // -------------------------------------------------------- serve 
