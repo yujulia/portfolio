@@ -34,59 +34,20 @@ $color-nyu: #58068c;
 $thumb-width: 300px;
 
 // ----------------------------------------------- extendables
-
 %clearfix {
-    zoom: 1;
-
-    &:before, &:after  {
-        content: "";
-        display: table;
-    }
-
-    &:after {
-        clear: both;
-    }   
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
-    
-%clipbox {
-    width: 100%;
-    overflow: hidden;
-}
-    
+        
 %nofrill {
-    @extend %clearfix;
-    margin: 0;
-    padding: 0;
+    margin: 0; /* test */
+    padding: 0; 
 }
 
-%beforeCarrotCell {
-    font-family: "carrotcell" !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    vertical-align: middle;
-}
 
-// ----------------------------------------------- mixins
-@mixin round($rad){
-    border-radius: $rad;
-}
 
-@mixin customShadow($x, $y, $size, $spread, $color-shadow) {
-    box-shadow: $x $y $size $spread $color-shadow;
-}
 
-@mixin customRound($tl, $tr, $bl, $br) {
-    border-top-left-radius: $tl;
-    border-top-right-radius: $tr;
-    border-bottom-right-radius: $br;
-    border-bottom-left-radius: $bl;
-}
-    
-    
     

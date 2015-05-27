@@ -1,37 +1,11 @@
-ol, ul, figure, .dailybeast .content, .imageList__title, .company, .content, .tags {
-  zoom: 1; }
-  ol:before, ul:before, figure:before, .dailybeast .content:before, .imageList__title:before, .company:before, .content:before, .tags:before, ol:after, ul:after, figure:after, .dailybeast .content:after, .imageList__title:after, .company:after, .content:after, .tags:after {
-    content: "";
-    display: table; }
-  ol:after, ul:after, figure:after, .dailybeast .content:after, .imageList__title:after, .company:after, .content:after, .tags:after {
-    clear: both; }
+.company:after, .content:after, .demo:after, .tags:after {
+  content: "";
+  display: table;
+  clear: both; }
 
-ol, ul, figure, .dailybeast .content, .imageList__title {
+ol, ul, .dailybeast .content, .imageList__title {
   margin: 0;
-  padding: 0; }
-
-[data-icon]:before, [class^="cc-"]:before, [class*=" cc-"]:before, [class^="cc-"]:after, [class*=" cc-"]:after {
-  font-family: "carrotcell" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  vertical-align: middle; }
-
-ol, ul, figure, .dailybeast .content, .imageList__title, .company, .content, .tags {
-  zoom: 1; }
-  ol:before, ul:before, figure:before, .dailybeast .content:before, .imageList__title:before, .company:before, .content:before, .tags:before, ol:after, ul:after, figure:after, .dailybeast .content:after, .imageList__title:after, .company:after, .content:after, .tags:after {
-    content: "";
-    display: table; }
-  ol:after, ul:after, figure:after, .dailybeast .content:after, .imageList__title:after, .company:after, .content:after, .tags:after {
-    clear: both; }
-
-ol, ul, figure, .dailybeast .content, .imageList__title {
-  margin: 0;
+  /* test */
   padding: 0; }
 
 [data-icon]:before, [class^="cc-"]:before, [class*=" cc-"]:before, [class^="cc-"]:after, [class*=" cc-"]:after {
@@ -230,9 +204,6 @@ html {
 
 ol, ul {
   list-style: none; }
-
-figure img {
-  width: 100%; }
 
 img {
   display: block; }
