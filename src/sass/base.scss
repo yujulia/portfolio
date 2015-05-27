@@ -123,7 +123,7 @@ p {
 
 .tugboat {
     padding-bottom: 0px;
-    background: #000 url(../img/tugboat.jpg) no-repeat right center;
+    background: #000 url(../img/lifesaver.jpg) no-repeat right center;
     min-height: 389px;
 
     .content__inner {
@@ -160,6 +160,11 @@ p {
 .dailybeast {
     background: #000;
     padding-bottom: 0;
+
+    .content {
+        @extend %nofrill;
+        width: 100%;
+    }
 
     .workheader {
         text-align: center;

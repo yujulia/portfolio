@@ -1,6 +1,5 @@
 -var addMin = (dev == true) ? "" : ".min"
 
-
 mixin taglist(stack, company)
     ul(class="tags tags--#{company}")
         each val in stack
@@ -11,10 +10,8 @@ mixin imglist(projects, company, w, h)
         each val in projects         
             li(class="imageList__item")
                 img(src="img/thumb/#{company}/#{val.id}.png", alt="#{val.name} image", width="#{w}", height="#{h}", class="imageList__img")
-  
                 h3.imageList__title 
                     span #{val.name} 
-
                     if val.link
                         a(href="#{val.link}", target="_blank", class="iconLink cc-external", title="visit") Visit 
                     if val.detail
@@ -34,13 +31,17 @@ mixin workHeading(current)
             .content__inner
                 h2(class="workheader__title")
                     span #{current.name} 
-                   
                 p.title #{current.title}, #{current.time}
-
                 if current.stack 
                     +taglist(current.stack, current.id)
-
                 p.desc #{current.desc}
+
+mixin companyArticle(company, codata)
+    article(class="company #{company}")
+        +workHeading(codata)
+        if codata.projects 
+            .content
+                +imglist(codata.projects, company, codata.imgW, codata.imgH)
 
 doctype html
 html(lang="en")
@@ -59,33 +60,9 @@ html(lang="en")
                 span Portfolio
                 a(href=".", class="pageTitle__link") Julia Yu
 
-        article(class="company tugboat")
-            +workHeading(data.tugboat)
-                    
-        article(class="company subrosa")
-            +workHeading(data.subrosa)
+        each company in data
+            +companyArticle(company.id, company)
 
-            .content
-                +imglist(data.subrosa.projects, "subrosa", data.subrosa.imgW, data.subrosa.imgH)
-
-
-        article(class="company dailybeast")
-            +workHeading(data.dailybeast)
-
-            +imglist(data.dailybeast.projects, "dailybeast", data.dailybeast.imgW, data.dailybeast.imgH)
-
-
-        article(class="company schematic")
-            +workHeading(data.schematic)
-
-            .content
-                +imglist(data.schematic.projects, "schematic")
-                    
-        article(class="company razorfish")
-            +workHeading(data.razorfish)
-        
-        article(class="company bay9")
-            +workHeading(data.bay9)
 
         
 

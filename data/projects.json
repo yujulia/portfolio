@@ -1,5 +1,5 @@
-{ 
-    "tugboat": {
+[ 
+    {
         "title": "Front End Engineer",
         "time": "May 2013 - May 2015",
         "stack": ["Javascript", "HTML", "SASS", "D3", "jQuery", "Python", "Jinja2", "Typekit"],
@@ -9,99 +9,7 @@
         "desc": "Help content creators find supporters, offer products and subscriptions through a web interface."
     },
 
-    "dailybeast": {
-        "title": "Senior Developer",
-        "time": "June 2010 - June 2011",
-        "link": "http://thedailybeast.com",
-        "name": "The Daily Beast",
-        "id": "dailybeast",
-        "imgW" : "300",
-        "imgH" : "200",
-        "projects" : [
-            {
-                "id": "dailybeast",
-                "name" : "The Daily Beast",
-                "stack" : ["Javascript", "jQuery", "Ruby on Rails", "HTML", "SASS", "HAML", "SVN"],
-                "info" : "Building and AB testing new layouts of the Beast, creating feature interactions using parallax, building CMS tools."
-            },
-            {
-                "width" : "480",
-                "height" : "220",
-                "id": "thedish",
-                "name" : "Andrew Sullivan's The Dish",
-                "stack" : ["HTML", "CSS", "WordPress"],
-                "info" : "Created new WordPress template for Andrew Sullivan's blog."
-            }
-        ]
-    },
-
-    "razorfish": { 
-        "title": "Presentation Layer Developer",
-        "time": "August 2006 - July 2010",
-        "link": "http://www.razorfish.com",
-        "name": "Razorfish",
-        "id": "razorfish",
-        "stack": ["Javascript", "HTML", "CSS", "ASP", "Teamsite", "IW-Perl"]
-    },
-
-    "bay9": {
-        "title": "Web Developer",
-        "time": "June 2002 - December 2004",
-        "id": "bay9",
-        "name": "Bay9",
-        "stack": ["HTML", "CSS", "Perl", "CGI", "mySQL"]
-    },
-
-    "schematic": {
-        "title": "Senior Software Developer",
-        "time": "August 2006 - July 2010",
-        "id": "schematic",
-        "name": "Schematic",
-        "imgW" : "300",
-        "imgH" : "200",
-        "projects": [
-            {
-                "id": "bible",
-                "name": "Library of Congress Gutenberg Bible",
-                "stack": ["Javascript", "Silverlight"],
-                "info": "Silverlight 1.0 build of Libary of Congress kiosk interface for web, including 3D animation and zoom/pan interactions."
-            },
-            {
-                "id": "bbc",
-                "name": "BBC Olympics iPhone App",
-                "stack": ["Objective C"],
-                "gitsample" : "https://github.com/yujulia/sample/tree/master/olydemo",
-                "info": "Proof of concept built in Objective C."
-            },
-            {
-                "id": "sesame",
-                "name": "Sesame Workshop",
-                "stack": ["Javascript", "CSS", "HTML", "accessible"],
-                "info": "An accessible and progressively enhanced website for Sesame Workshop."
-            },
-            {
-                "id": "clues",
-                "name": "Scholastic 39Clues",
-                "stack": ["Javascript", "jQuery", "HTML", "CSS"],
-                "info": "Site and CMS built with custom interface in Javascript."
-            },
-            {
-                "id": "hsn",
-                "name": "Home Shopping Network Silverlight Player",
-                "stack": ["Silverlight", "Javascript"],
-                "gitsample" : "https://github.com/yujulia/sample/tree/master/oldcode/silverlight/videoplayer",
-                "info": "Built with version 1.0 Javascript version of Silverlight, a streaming video player with slide out menus."
-            },
-            {
-                "id": "vevo",
-                "name": "Vevo",
-                "stack": ["Javascript", "HTML", "CSS", "JSP"],
-                "info": "Vevo website with javascript playlist feature."
-            }
-        ]
-    },
-
-    "subrosa": {
+    {
         "title": "Lead Developer",
         "time": "June 2011 - May 2013",
         "id": "subrosa",
@@ -199,5 +107,96 @@
                 "info": "A Facebook app for Urban Outfitter + Levi's Bikeshop."
             }
         ]  
+    },
+
+    {
+        "title": "Senior Developer",
+        "time": "June 2010 - June 2011",
+        "link": "http://thedailybeast.com",
+        "name": "The Daily Beast",
+        "id": "dailybeast",
+        "imgW" : "300",
+        "imgH" : "200",
+        "projects" : [
+            {
+                "id": "dailybeast",
+                "name" : "The Daily Beast",
+                "stack" : ["Javascript", "jQuery", "Ruby on Rails", "HTML", "SASS", "HAML", "SVN"],
+                "info" : "Building and AB testing new layouts of the Beast, creating feature interactions using parallax, building CMS tools."
+            },
+            {
+                "width" : "480",
+                "height" : "220",
+                "id": "thedish",
+                "name" : "Andrew Sullivan's The Dish",
+                "stack" : ["HTML", "CSS", "WordPress"],
+                "info" : "Created new WordPress template for Andrew Sullivan's blog."
+            }
+        ]
+    },
+
+    {
+        "title": "Senior Software Developer",
+        "time": "August 2006 - July 2010",
+        "id": "schematic",
+        "name": "Schematic",
+        "imgW" : "300",
+        "imgH" : "200",
+        "projects": [
+            {
+                "id": "bible",
+                "name": "Library of Congress Gutenberg Bible",
+                "stack": ["Javascript", "Silverlight"],
+                "info": "Silverlight 1.0 build of Libary of Congress kiosk interface for web, including 3D animation and zoom/pan interactions."
+            },
+            {
+                "id": "bbc",
+                "name": "BBC Olympics iPhone App",
+                "stack": ["Objective C"],
+                "gitsample" : "https://github.com/yujulia/sample/tree/master/olydemo",
+                "info": "Proof of concept built in Objective C."
+            },
+            {
+                "id": "sesame",
+                "name": "Sesame Workshop",
+                "stack": ["Javascript", "CSS", "HTML", "accessible"],
+                "info": "An accessible and progressively enhanced website for Sesame Workshop."
+            },
+            {
+                "id": "clues",
+                "name": "Scholastic 39Clues",
+                "stack": ["Javascript", "jQuery", "HTML", "CSS"],
+                "info": "Site and CMS built with custom interface in Javascript."
+            },
+            {
+                "id": "hsn",
+                "name": "Home Shopping Network Silverlight Player",
+                "stack": ["Silverlight", "Javascript"],
+                "gitsample" : "https://github.com/yujulia/sample/tree/master/oldcode/silverlight/videoplayer",
+                "info": "Built with version 1.0 Javascript version of Silverlight, a streaming video player with slide out menus."
+            },
+            {
+                "id": "vevo",
+                "name": "Vevo",
+                "stack": ["Javascript", "HTML", "CSS", "JSP"],
+                "info": "Vevo website with javascript playlist feature."
+            }
+        ]
+    },
+    { 
+        "title": "Presentation Layer Developer",
+        "time": "August 2006 - July 2010",
+        "link": "http://www.razorfish.com",
+        "name": "Razorfish",
+        "id": "razorfish",
+        "stack": ["Javascript", "HTML", "CSS", "ASP", "Teamsite", "IW-Perl"]
+    },
+
+    {
+        "title": "Web Developer",
+        "time": "June 2002 - December 2004",
+        "id": "bay9",
+        "name": "Bay9",
+        "stack": ["HTML", "CSS", "Perl", "CGI", "mySQL"]
     }
-}
+]
