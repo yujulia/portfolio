@@ -1,5 +1,13 @@
 [ 
     {
+        "title": "Software Engineer",
+        "time": "July 2015 - now",
+        "id": "lyft",
+        "name": "Lyft",
+        "stack": ["Swift", "Angular", "HTML", "CSS", "Python", "PHP"]
+    },
+
+    {
         "title": "Front End Engineer",
         "time": "May 2013 - May 2015",
         "stack": ["Javascript", "HTML", "SASS", "D3", "jQuery", "Python", "Jinja2", "Typekit"],

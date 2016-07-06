@@ -24,7 +24,7 @@ img {
 
 :focus {
     outline: none;
-    border-bottom: dotted 1px $color-link;
+    border-bottom: solid 3px $color-link;
 }
 
 // --------------------------------
@@ -113,6 +113,28 @@ p {
     width: 960px;
     margin: 0 auto;
     padding: 0 10px;
+}
+
+.lyft {
+    background: $color-lyft;
+    color: #fff;
+
+    .workheader__title {
+        color: #fff;
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    .tags {
+        margin: 10px 0 0 0;
+    }
+
+    .tags__item {
+        background: #fff;
+        color: $color-lyft-mulberry;
+    }
 }
 
 .tugboat {
