@@ -55,7 +55,7 @@
     "gulp-util": "^3.0.4",
     "gulp-zip": "^3.0.2",
     "hisrc": "^2.0.0",
-    "jquery": "^2.1.4",
+    "jquery": "^2.2.4",
     "lodash": "^4.17.21",
     "normalize.css": "^3.0.3",
     "velocity-animate": "^1.2.2",
