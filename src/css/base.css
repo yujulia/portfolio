@@ -276,7 +276,7 @@ p {
   padding: 0 10px; }
 
 .lyft {
-  background: #FF00BF;
+  background: #FF00BF url(../img/lyftapp.png) no-repeat right center;
   color: #fff; }
   .lyft .workheader__title {
     color: #fff; }

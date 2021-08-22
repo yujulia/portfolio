@@ -1,0 +1,21 @@
+.lyft {
+  background: #FF00BF url(../img/lyftapp.png) no-repeat right bottom;
+}
+
+.lyft .tags {
+  margin-bottom: 5em;
+}
+
+.lyft .content__inner {
+  max-width: 50%;
+}
+
+@media screen and (max-width: 980px) {
+  .lyft {
+    background-position: 300px center; 
+  }
+  .lyft .content__inner {
+      max-width: 100%; 
+  }
+
+}
