@@ -55,7 +55,7 @@
     "gulp-util": "^3.0.4",
     "gulp-zip": "^3.0.2",
     "hisrc": "^2.0.0",
-    "jquery": "^2.2.4",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.21",
     "normalize.css": "^3.0.3",
     "velocity-animate": "^1.2.2",
@@ -65,6 +65,6 @@
   },
   "dependencies": {
     "jade": "^1.11.0",
-    "jQuery": "npm:jquery@^2.2.4"
+    "jQuery": "npm:jquery@^3.5.0"
   }
 }
